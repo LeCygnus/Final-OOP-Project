@@ -38,5 +38,10 @@ namespace OOP_Final_Project
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

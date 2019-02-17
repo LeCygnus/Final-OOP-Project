@@ -19,6 +19,8 @@ namespace OOP_Final_Project
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int price;
+        pub
         public MainWindow()
         {
             InitializeComponent();
