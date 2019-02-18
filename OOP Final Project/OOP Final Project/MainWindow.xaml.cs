@@ -25,7 +25,6 @@ namespace OOP_Final_Project
         public MainWindow()
         {
             InitializeComponent();
-            MessageBox.Show(Convert.ToString(priceArray));
             if(priceArray == null)
             {
                 priceArray = new decimal[3];

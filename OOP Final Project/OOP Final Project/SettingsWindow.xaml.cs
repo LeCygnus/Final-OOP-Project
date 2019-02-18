@@ -49,7 +49,7 @@ namespace OOP_Final_Project
                     if (priceGram.Text == "")
                         priceGram.Text = "0";
                     priceArray[0] = Convert.ToDecimal(priceGram.Text);
-                    priceArray.
+                    mainWindow.priceArray[0] = priceArray[0];
                     tenK.Text = priceGram.Text;
                     break;
 
@@ -57,6 +57,7 @@ namespace OOP_Final_Project
                     if (priceGram.Text == "")
                         priceGram.Text = "0";
                     priceArray[1] = Convert.ToDecimal(priceGram.Text);
+                    mainWindow.priceArray[1] = priceArray[1];
                     eightteenK.Text = priceGram.Text;
                     break;
 
@@ -64,6 +65,7 @@ namespace OOP_Final_Project
                     if (priceGram.Text == "")
                         priceGram.Text = "0";
                     priceArray[2] = Convert.ToDecimal(priceGram.Text);
+                    mainWindow.priceArray[2] = priceArray[2];
                     twentyoneK.Text = priceGram.Text;
                     break;
 
