@@ -1,0 +1,36 @@
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\OOP Final Project.csprojAssemblyReference.cache
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\LoanTransaction.g.cs
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\MainWindow.g.cs
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\SettingsWindow.g.cs
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\TransactionWindow.g.cs
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\AddNameWindow.g.cs
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\App.g.cs
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\OOP Final Project_MarkupCompile.cache
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\OOP Final Project_MarkupCompile.lref
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\bin\Debug\OOP Final Project.exe.config
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\bin\Debug\OOP Final Project.exe
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\bin\Debug\OOP Final Project.pdb
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\bin\Debug\ControlzEx.dll
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\bin\Debug\MahApps.Metro.dll
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\bin\Debug\MaterialDesignColors.dll
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\bin\Debug\ControlzEx.pdb
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\bin\Debug\MahApps.Metro.pdb
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\bin\Debug\MahApps.Metro.xml
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\bin\Debug\MaterialDesignColors.pdb
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\App.baml
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\LoanTransaction.baml
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\MainWindow.baml
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\SettingsWindow.baml
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\TransactionWindow.baml
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\AddNameWindow.baml
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\OOP Final Project.g.resources
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\OOP_Final_Project.Properties.Resources.resources
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\OOP Final Project.csproj.GenerateResource.cache
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\OOP Final Project.csproj.CoreCompileInputs.cache
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\OOP Final Project.csproj.CopyComplete
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\OOP Final Project.exe
+C:\Users\breachong\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\OOP Final Project.pdb

@@ -12,22 +12,28 @@
         <Label Content="Type of Jewelry:" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
         <Label Content="Quality of Jewelry:" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Margin="79,16,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Add Name" HorizontalAlignment="Left" Margin="214,12,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.732,1.418" Click="Button_Click"/>
+        <Button Name="addnameButton" Content="Add Name" HorizontalAlignment="Left" Margin="214,12,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.732,1.418" Click="NameButton_Click"/>
         <ComboBox HorizontalAlignment="Left" Margin="108,53,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="ComboBoxItem" HorizontalAlignment="Left" Width="118" Selected="ComboBoxItem_Selected"/>
+            <ComboBoxItem Content="Rings" HorizontalAlignment="Left" Width="118" Selected="ComboBoxItem_Selected"/>
+            <ComboBoxItem Content="Necklaces" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Bracelets" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Earrings" HorizontalAlignment="Left" Width="118"/>
+
         </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Margin="121,78,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="ComboBoxItem" HorizontalAlignment="Left" Width="118" Selected="ComboBoxItem_Selected"/>
+        <ComboBox HorizontalAlignment="Left" Margin="122,84,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="10k" HorizontalAlignment="Left" Width="118" Selected="ComboBoxItem_Selected"/>
+            <ComboBoxItem Content="18k" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="21k" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
         <Label Content="Weight of Jewelry:" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="121,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" TextChanged="TextBox_TextChanged_2"/>
         <Label Content="grams" HorizontalAlignment="Left" Margin="176,111,0,0" VerticalAlignment="Top"/>
         <Label Content="Discount:" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="121,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" TextChanged="TextBox_TextChanged_2"/>
-        <Label Content="Details:" HorizontalAlignment="Left" Margin="10,173,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="121,173,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" TextChanged="TextBox_TextChanged_2"/>
-        <Label Content="Actual Value:" HorizontalAlignment="Left" Margin="10,204,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="122,209,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Label Content="Details:" HorizontalAlignment="Left" Margin="10,204,0,0" VerticalAlignment="Top"/>
+        <Label Content="Actual Value:" HorizontalAlignment="Left" Margin="10,173,0,0" VerticalAlignment="Top"/>
+        <TextBlock Name="actualValueText" HorizontalAlignment="Left" Margin="121,178,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="16" Margin="121,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

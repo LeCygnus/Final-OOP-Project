@@ -19,16 +19,44 @@ namespace OOP_Final_Project
     /// </summary>
     public partial class MainWindow : Window
     {
-        public int price;
-        pub
+        SettingsWindow openSettings;
+        TransactionWindow openTransactions;
+        public decimal[] priceArray;
         public MainWindow()
         {
             InitializeComponent();
+            MessageBox.Show(Convert.ToString(priceArray));
+            if(priceArray == null)
+            {
+                priceArray = new decimal[3];
+            }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Transactions(object sender, RoutedEventArgs e)
         {
+            if (openTransactions == null)
+            {
+                openTransactions = new TransactionWindow();
+                openTransactions.Show();
+            }
+            else
+            {
+                openTransactions.Show();
+            }
+            this.Hide();
+        }
 
+        private void Button_Settings(object sender, RoutedEventArgs e)
+        {
+            if(openSettings == null)
+            {
+                openSettings = new SettingsWindow();
+                openSettings.Show();
+            }
+            else
+            {
+                openSettings.Show();
+            }
         }
     }
 }

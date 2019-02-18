@@ -19,17 +19,19 @@ namespace OOP_Final_Project
     /// </summary>
     public partial class SettingsWindow : Window
     {
+        decimal[] priceArray;
+        MainWindow mainWindow = new MainWindow();
+
         public SettingsWindow()
         {
             InitializeComponent();
+            if (priceArray == null)
+            {
+                priceArray = new decimal[3];
+            }
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
         }
@@ -39,9 +41,38 @@ namespace OOP_Final_Project
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Save(object sender, RoutedEventArgs e)
         {
+            switch (selectedCarat.Text)
+            {
+                case "10k":
+                    if (priceGram.Text == "")
+                        priceGram.Text = "0";
+                    priceArray[0] = Convert.ToDecimal(priceGram.Text);
+                    priceArray.
+                    tenK.Text = priceGram.Text;
+                    break;
 
+                case "18k":
+                    if (priceGram.Text == "")
+                        priceGram.Text = "0";
+                    priceArray[1] = Convert.ToDecimal(priceGram.Text);
+                    eightteenK.Text = priceGram.Text;
+                    break;
+
+                case "21k":
+                    if (priceGram.Text == "")
+                        priceGram.Text = "0";
+                    priceArray[2] = Convert.ToDecimal(priceGram.Text);
+                    twentyoneK.Text = priceGram.Text;
+                    break;
+
+                default:
+                    break;
+            }
+            selectedCarat.Text = null;
+            priceGram.Text = null;
+            this.Hide();        
         }
     }
 }

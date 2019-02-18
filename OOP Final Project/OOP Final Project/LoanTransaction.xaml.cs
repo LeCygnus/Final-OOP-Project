@@ -39,14 +39,15 @@ namespace OOP_Final_Project
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void TextBox_TextChanged_2(object sender, TextChangedEventArgs e)
         {
             
+        }
+
+        private void NameButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddNameWindow windowName = new AddNameWindow();
+            windowName.Show();
         }
     }
 }
