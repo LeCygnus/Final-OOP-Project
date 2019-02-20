@@ -72,9 +72,12 @@ namespace OOP_Final_Project
                 default:
                     break;
             }
+            mainWindow.transactionsButton.Content = "HAHAHAHA";
             selectedCarat.Text = null;
             priceGram.Text = null;
-            this.Hide();        
+            this.Hide();
+            mainWindow.Show();
+
         }
     }
 }
