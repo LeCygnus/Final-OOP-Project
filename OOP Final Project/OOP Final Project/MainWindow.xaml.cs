@@ -25,7 +25,8 @@ namespace OOP_Final_Project
         public MainWindow()
         {
             InitializeComponent();
-            if(priceArray == null)
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            if (priceArray == null)
             {
                 priceArray = new decimal[3];
             }
@@ -37,12 +38,13 @@ namespace OOP_Final_Project
             {
                 Transactions = new TransactionWindow();
                 Transactions.Show();
+                this.Hide();
             }
             else
             {
                 Transactions.Show();
+                this.Hide();
             }
-            this.Hide();
         }
 
         private void Button_Settings(object sender, RoutedEventArgs e)
@@ -50,23 +52,30 @@ namespace OOP_Final_Project
             if(Settings == null)
             {
                 Settings = new SettingsWindow();
+                this.Hide();
                 Settings.ShowDialog();
-                priceArray = Settings.priceArray;
+                this.Show();
+                DataStorage.priceList = Settings.priceArray;
             }
             else
             {
+                this.Hide();
                 Settings.ShowDialog();
-                priceArray = Settings.priceArray;
+                this.Show();
+                DataStorage.priceList = Settings.priceArray;
             }
         }
     }
     public static class DataStorage
     {
+        public static decimal[] priceList = new decimal[3];
         public static List<string> customerList = new List<string>();
         //public static List<string>  = new List<string>();
 
-        //public static List<int>  = new List<string>();
+        //public static List<int> = new List<int>();
         //public static List<int> = new List<string>();
+
+        //public static List<decimal> priceList = new List<decimal>();
 
     }
 }

@@ -23,13 +23,31 @@ namespace OOP_Final_Project
         public AddNameWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            PersonClass GetName = new PersonClass(nameFirst.Text,nameMiddle.Text,nameLast.Text);
-            DataStorage.customerList.Add(nameFirst.Text + nameMiddle.Text + nameLast.Text);
-            
+            if (txtNameFirst.Text != "" || txtNameMiddle.Text != "" || txtNameLast.Text != "")
+            {
+                bool exist = false;
+                PersonClass GetName = new PersonClass(txtNameFirst.Text, txtNameLast.Text, txtNameMiddle.Text);
+
+                foreach (string name in DataStorage.customerList)
+                {
+                    if (name == GetName.GetFullName())
+                    {
+                        MessageBox.Show("Error! Name already exists in database!");
+                        exist = true;
+                    }
+                }
+                if (!exist)
+                {
+                    DataStorage.customerList.Add(GetName.GetFullName());
+                    this.Close();
+                }
+            }
+            this.Close();
         }
 
     }

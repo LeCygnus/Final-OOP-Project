@@ -14,17 +14,19 @@ using System.Windows.Shapes;
 
 namespace OOP_Final_Project
 {
+
     public partial class TransactionWindow : Window
-    {
-        
+    {       
         public TransactionWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void btnLoan_Click(object sender, RoutedEventArgs e)
         {
-
+            LoanTransaction openTransactionWindow = new LoanTransaction();
+            openTransactionWindow.Show();           
         }
     }
 }

@@ -13,10 +13,11 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="146*"/>
             <ColumnDefinition Width="9*"/>
-            <ColumnDefinition Width="137*"/>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="125*"/>
         </Grid.ColumnDefinitions>
         <Button Name="btnTransactions" Content="Transactions" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" Width="126" Height="51" Click="Button_Transactions"/>
-        <Button Name ="btnSettings" Content="Settings" HorizontalAlignment="Left" Margin="1,73,0,0" VerticalAlignment="Top" Width="126" Height="51" Click="Button_Settings" Grid.Column="2"/>
-        <TextBlock HorizontalAlignment="Center" TextAlignment="Center" Margin="78,10,70,0" TextWrapping="wrap" Text="Welcome" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="144"/>
+        <Button Name ="btnSettings" Content="Settings" HorizontalAlignment="Left" Margin="1,73,0,0" VerticalAlignment="Top" Width="126" Height="51" Click="Button_Settings" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Center" TextAlignment="Center" Margin="78,10,70,0" TextWrapping="wrap" Text="Welcome" VerticalAlignment="Top" Grid.ColumnSpan="4" Width="144"/>
     </Grid>
 </Window>
