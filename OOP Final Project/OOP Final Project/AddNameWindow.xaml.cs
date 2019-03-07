@@ -27,8 +27,9 @@ namespace OOP_Final_Project
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-        PersonClass GetName = new PersonClass(nameFirst.Text,nameMiddle.Text,nameLast.Text);
-        Console.WriteLine(GetName.GetFullName());
+            PersonClass GetName = new PersonClass(nameFirst.Text,nameMiddle.Text,nameLast.Text);
+            DataStorage.customerList.Add(nameFirst.Text + nameMiddle.Text + nameLast.Text);
+            
         }
 
     }

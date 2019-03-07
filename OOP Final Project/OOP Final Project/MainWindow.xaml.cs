@@ -19,8 +19,8 @@ namespace OOP_Final_Project
     /// </summary>
     public partial class MainWindow : Window
     {
-        SettingsWindow openSettings;
-        TransactionWindow openTransactions;
+        SettingsWindow Settings;
+        TransactionWindow Transactions;
         public decimal[] priceArray;
         public MainWindow()
         {
@@ -33,29 +33,40 @@ namespace OOP_Final_Project
 
         private void Button_Transactions(object sender, RoutedEventArgs e)
         {
-            if (openTransactions == null)
+            if (Transactions == null)
             {
-                openTransactions = new TransactionWindow();
-                openTransactions.Show();
+                Transactions = new TransactionWindow();
+                Transactions.Show();
             }
             else
             {
-                openTransactions.Show();
+                Transactions.Show();
             }
             this.Hide();
         }
 
         private void Button_Settings(object sender, RoutedEventArgs e)
         {
-            if(openSettings == null)
+            if(Settings == null)
             {
-                openSettings = new SettingsWindow();
-                openSettings.Show();
+                Settings = new SettingsWindow();
+                Settings.ShowDialog();
+                priceArray = Settings.priceArray;
             }
             else
             {
-                openSettings.Show();
+                Settings.ShowDialog();
+                priceArray = Settings.priceArray;
             }
         }
+    }
+    public static class DataStorage
+    {
+        public static List<string> customerList = new List<string>();
+        //public static List<string>  = new List<string>();
+
+        //public static List<int>  = new List<string>();
+        //public static List<int> = new List<string>();
+
     }
 }

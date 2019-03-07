@@ -19,7 +19,7 @@ namespace OOP_Final_Project
     /// </summary>
     public partial class SettingsWindow : Window
     {
-        decimal[] priceArray;
+        public decimal[] priceArray;
         MainWindow mainWindow = new MainWindow();
 
         public SettingsWindow()
@@ -72,12 +72,9 @@ namespace OOP_Final_Project
                 default:
                     break;
             }
-            mainWindow.transactionsButton.Content = "HAHAHAHA";
             selectedCarat.Text = null;
             priceGram.Text = null;
-            this.Hide();
-            mainWindow.Show();
-
+            this.Hide();        
         }
     }
 }

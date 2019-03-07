@@ -16,9 +16,15 @@ namespace OOP_Final_Project
 {
     public partial class TransactionWindow : Window
     {
+        
         public TransactionWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnLoan_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

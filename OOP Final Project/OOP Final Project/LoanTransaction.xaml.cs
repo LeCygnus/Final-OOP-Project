@@ -22,32 +22,25 @@ namespace OOP_Final_Project
         public LoanTransaction()
         {
             InitializeComponent();
+            TransactionData.customerList = DataStorage.customerList;
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            foreach (string item in TransactionData.customerList)
+            {
+                cmbNameList.Items.Add(item);
+            }
         }
 
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        private void AddName(object sender, RoutedEventArgs e)
         {
-
+            AddNameWindow addName = new AddNameWindow();
+            addName.ShowDialog();
+            TransactionData.customerList = DataStorage.customerList;
         }
-
-        private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged_2(object sender, TextChangedEventArgs e)
-        {
-            
-        }
-
-        private void NameButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddNameWindow windowName = new AddNameWindow();
-            windowName.Show();
-        }
+    }
+    public static class TransactionData
+    {
+        public static List<string> customerList = new List<string>();
     }
 }
