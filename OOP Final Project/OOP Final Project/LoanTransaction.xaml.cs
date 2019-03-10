@@ -125,5 +125,15 @@ namespace OOP_Final_Project
                 cmbNameList.Items.Add(item);
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cmbJewelryQuality_DropDownClosed(object sender, EventArgs e)
+        {
+            CalculationLogic();
+        }
     }
 }

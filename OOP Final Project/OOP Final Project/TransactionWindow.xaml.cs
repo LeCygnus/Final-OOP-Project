@@ -28,5 +28,11 @@ namespace OOP_Final_Project
             LoanTransaction openTransactionWindow = new LoanTransaction();
             openTransactionWindow.Show();           
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.MainWindow.Show();
+            this.Hide();
+        }
     }
 }

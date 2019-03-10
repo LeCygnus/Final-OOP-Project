@@ -26,10 +26,6 @@ namespace OOP_Final_Project
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            if (priceArray == null)
-            {
-                priceArray = new decimal[3];
-            }
         }
 
         private void Button_Transactions(object sender, RoutedEventArgs e)
@@ -55,7 +51,7 @@ namespace OOP_Final_Project
                 this.Hide();
                 Settings.ShowDialog();
                 this.Show();
-                DataStorage.priceList = Settings.priceArray;
+                DataStorage.priceList = Settings.priceArray;              
             }
             else
             {
@@ -77,5 +73,25 @@ namespace OOP_Final_Project
 
         //public static List<decimal> priceList = new List<decimal>();
 
+    }
+
+    public static class StateofWindow
+    {
+        public static MainWindow openwindow;
+        
+        public static void Hidden()
+        {
+            //if(openwindow.IsActive)
+            //{
+            //    openwindow.Hide();
+            //}
+
+            MessageBox.Show("hi");
+        }
+
+        public static void Show()
+        {
+            openwindow.Show();
+        }
     }
 }

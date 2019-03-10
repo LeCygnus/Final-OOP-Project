@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="LoanTransaction" Height="450" Width="453">
     <Grid>
-        <Button Content="Add Transaction" HorizontalAlignment="Left" Margin="108,360,0,0" VerticalAlignment="Top" Width="143" RenderTransformOrigin="0.732,1.418"/>
+        <Button Content="Add Transaction" HorizontalAlignment="Left" Margin="108,360,0,0" VerticalAlignment="Top" Width="143" RenderTransformOrigin="0.732,1.418" Click="Button_Click"/>
         <Label Content="Name:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top"/>
         <Label Content="Type of Jewelry:" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
         <Label Content="Quality of Jewelry:" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"/>
@@ -20,7 +20,7 @@
             <ComboBoxItem Content="Earrings" HorizontalAlignment="Left" Width="118"/>
 
         </ComboBox>
-        <ComboBox Name="cmbJewelryQuality" HorizontalAlignment="Left" Margin="122,84,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbJewelryQuality_SelectionChanged">
+        <ComboBox Name="cmbJewelryQuality" HorizontalAlignment="Left" Margin="122,84,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbJewelryQuality_SelectionChanged" DropDownClosed="cmbJewelryQuality_DropDownClosed">
             <ComboBoxItem Content="10k" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="18k" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="21k" HorizontalAlignment="Left" Width="118"/>
