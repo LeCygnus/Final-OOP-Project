@@ -33,39 +33,30 @@ namespace OOP_Final_Project
 
 
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void Button_Save(object sender, RoutedEventArgs e)
         {
+
             switch (selectedCarat.Text)
             {
                 case "10k":
                     if (priceGram.Text == "")
                         priceGram.Text = "0";
                     priceArray[0] = Convert.ToDecimal(priceGram.Text);
-                    tenK.Text = priceGram.Text;
+                    txtTenK.Text = priceGram.Text;
                     break;
 
                 case "18k":
                     if (priceGram.Text == "")
                         priceGram.Text = "0";
                     priceArray[1] = Convert.ToDecimal(priceGram.Text);
-                    eightteenK.Text = priceGram.Text;
+                    txtEightteenK.Text = priceGram.Text;
                     break;
 
                 case "21k":
                     if (priceGram.Text == "")
                         priceGram.Text = "0";
                     priceArray[2] = Convert.ToDecimal(priceGram.Text);
-                    twentyoneK.Text = priceGram.Text;
+                    txtTwentyoneK.Text = priceGram.Text;
                     break;
 
                 default:

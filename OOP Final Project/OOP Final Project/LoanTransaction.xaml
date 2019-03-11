@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOP_Final_Project"
         mc:Ignorable="d"
-        Title="LoanTransaction" Height="450" Width="453">
+        Title="LoanTransaction" Height="450" Width="450">
     <Grid>
         <Button Content="Add Transaction" HorizontalAlignment="Left" Margin="108,360,0,0" VerticalAlignment="Top" Width="143" RenderTransformOrigin="0.732,1.418" Click="Button_Click"/>
         <Label Content="Name:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top"/>
@@ -20,7 +20,7 @@
             <ComboBoxItem Content="Earrings" HorizontalAlignment="Left" Width="118"/>
 
         </ComboBox>
-        <ComboBox Name="cmbJewelryQuality" HorizontalAlignment="Left" Margin="122,84,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbJewelryQuality_SelectionChanged" DropDownClosed="cmbJewelryQuality_DropDownClosed">
+        <ComboBox Name="cmbJewelryQuality" HorizontalAlignment="Left" Margin="122,84,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="cmbJewelryQuality_DropDownClosed">
             <ComboBoxItem Content="10k" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="18k" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="21k" HorizontalAlignment="Left" Width="118"/>

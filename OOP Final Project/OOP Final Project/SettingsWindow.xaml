@@ -14,7 +14,7 @@
         <Label Content="Current Price:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,114,0,0" Height="26" Width="82"/>
         <Label Content="Price Per Gram:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,49,0,0" Height="26" Width="89"/>
         <Label Content="10k Carat =" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,132,0,0" Height="26" Width="89" Grid.ColumnSpan="2"/>
-        <TextBlock Name="tenK" HorizontalAlignment="Left" Margin="80,137,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-15.125,0.613" Grid.ColumnSpan="2" Width="52"/>
+        <TextBlock Name="txtTenK" HorizontalAlignment="Left" Margin="80,137,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-15.125,0.613" Grid.ColumnSpan="2" Width="52"/>
         <Button Content="Save" HorizontalAlignment="Left" Margin="57,82,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="Button_Save"/>
         <TextBox Name="priceGram" HorizontalAlignment="Left" Height="30" Margin="3,49,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="64" Grid.Column="1"/>
         <ComboBox Name="selectedCarat" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Margin="57,10,0,0" Grid.ColumnSpan="2">
@@ -26,8 +26,8 @@
         <Label Content="Carat:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,12,0,0" Height="26" Width="42"/>
         <Label Content="18k Carat =" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,145,0,0" Height="26" Width="89" Grid.ColumnSpan="2"/>
         <Label Content="21k Carat =" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,158,0,0" Height="26" Width="89" Grid.ColumnSpan="2"/>
-        <TextBlock Name="eightteenK" HorizontalAlignment="Left" Margin="80,150,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-15.125,0.613" Grid.ColumnSpan="2" Width="52"/>
-        <TextBlock Name="twentyoneK" HorizontalAlignment="Left" Margin="80,163,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-15.125,0.613" Grid.ColumnSpan="2" Width="52"/>
+        <TextBlock Name="txtEightteenK" HorizontalAlignment="Left" Margin="80,150,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-15.125,0.613" Grid.ColumnSpan="2" Width="52"/>
+        <TextBlock Name="txtTwentyoneK" HorizontalAlignment="Left" Margin="80,163,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-15.125,0.613" Grid.ColumnSpan="2" Width="52"/>
 
     </Grid>
 </Window>

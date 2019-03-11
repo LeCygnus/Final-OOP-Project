@@ -19,7 +19,7 @@ namespace OOP_Final_Project
     /// </summary>
     public partial class MainWindow : Window
     {
-        SettingsWindow Settings;
+        SettingsWindow Settings = new SettingsWindow();
         TransactionWindow Transactions;
         public decimal[] priceArray;
         public MainWindow()
@@ -45,21 +45,10 @@ namespace OOP_Final_Project
 
         private void ShowSettings(object sender, RoutedEventArgs e)
         {
-            if(Settings == null)
-            {
-                Settings = new SettingsWindow();
-                this.Hide();
-                Settings.ShowDialog();
-                this.Show();
-                DataStorage.priceList = Settings.priceArray;              
-            }
-            else
-            {
                 this.Hide();
                 Settings.ShowDialog();
                 this.Show();
                 DataStorage.priceList = Settings.priceArray;
-            }
         }
     }
     public static class DataStorage
@@ -68,30 +57,10 @@ namespace OOP_Final_Project
         public static List<string> customerList = new List<string>();
         //public static List<string>  = new List<string>();
 
-        //public static List<int> = new List<int>();
+        public static List<int> eightDigitPin = new List<int>();
         //public static List<int> = new List<string>();
 
         //public static List<decimal> priceList = new List<decimal>();
 
-    }
-
-    public static class StateofWindow
-    {
-        public static MainWindow openwindow;
-        
-        public static void Hidden()
-        {
-            //if(openwindow.IsActive)
-            //{
-            //    openwindow.Hide();
-            //}
-
-            MessageBox.Show("hi");
-        }
-
-        public static void Show()
-        {
-            openwindow.Show();
-        }
     }
 }
