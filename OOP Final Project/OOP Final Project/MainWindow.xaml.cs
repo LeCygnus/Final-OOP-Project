@@ -46,7 +46,7 @@ namespace OOP_Final_Project
         {
             if (Settings == null)
             {
-                SettingsWindow Settings = new SettingsWindow();
+                Settings = new SettingsWindow();
                 this.Hide();
                 Settings.ShowDialog();
                 this.Show();
@@ -65,12 +65,20 @@ namespace OOP_Final_Project
     {
         public static decimal[] priceList = new decimal[3];
         public static List<string> customerList = new List<string>();
-        //public static List<string>  = new List<string>();
+        public static List<string> address = new List<string>();
+        public static List<string> contactNumber = new List<string>();
+        public static List<string> typeOfJewelry = new List<string>();
+        public static List<string> qualityOfJewelry = new List<string>();
+        public static List<string> weightOfJewelry = new List<string>();
+        public static List<string> dateOfTransaction = new List<string>();
+        public static List<string> details = new List<string>();
 
+        public static List<int> discount = new List<int>();       
         public static List<int> eightDigitPin = new List<int>();
-        //public static List<int> = new List<string>();
 
-        //public static List<decimal> priceList = new List<decimal>();
+        public static List<decimal> actualValue = new List<decimal>();
+        public static List<decimal> amountLoaned = new List<decimal>();
+
 
     }
 }

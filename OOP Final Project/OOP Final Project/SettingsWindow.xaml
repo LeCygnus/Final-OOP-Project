@@ -5,29 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOP_Final_Project"
         mc:Ignorable="d"
-        Title="SettingsWindow" Height="225" Width="200">
+        Title="SettingsWindow" Height="325" Width="220">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Current Price:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,114,0,0" Height="26" Width="82"/>
-        <Label Content="Price Per Gram:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,49,0,0" Height="26" Width="89"/>
-        <Label Content="10k Carat =" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,132,0,0" Height="26" Width="89" Grid.ColumnSpan="2"/>
-        <TextBlock Name="txtTenK" HorizontalAlignment="Left" Margin="80,137,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-15.125,0.613" Grid.ColumnSpan="2" Width="52"/>
-        <Button Content="Save" HorizontalAlignment="Left" Margin="57,82,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="Button_Save"/>
-        <TextBox Name="priceGram" HorizontalAlignment="Left" Height="30" Margin="3,49,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="64" Grid.Column="1"/>
-        <ComboBox Name="selectedCarat" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Margin="57,10,0,0" Grid.ColumnSpan="2">
+        <Label Content="Current Price:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,189,0,0" Height="26" Width="82"/>
+        <Label Content="Price Per Gram:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,55,0,0" Height="26" Width="91"/>
+        <Label Content="10k Carat =" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,220,0,0" Height="26" Width="89" Grid.ColumnSpan="2"/>
+        <TextBlock Name="txtTenK" HorizontalAlignment="Left" Margin="80,225,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-15.125,0.613" Grid.ColumnSpan="2" Width="52"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="45,131,0,0" VerticalAlignment="Top" Width="110" Grid.ColumnSpan="2" Click="Button_Save" RenderTransformOrigin="0.5,0.469"/>
+        <TextBox Name="priceGram" HorizontalAlignment="Left" Height="30" Margin="0,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Grid.Column="1"/>
+        <ComboBox Name="selectedCarat" HorizontalAlignment="Left" VerticalAlignment="Top" Width="93" Margin="62,16,0,0" RenderTransformOrigin="1.918,1.714" Grid.ColumnSpan="2">
             <ComboBoxItem Content="10k" HorizontalAlignment="Left" Width="92"/>
             <ComboBoxItem Content="18k" HorizontalAlignment="Left" Width="92"/>
             <ComboBoxItem Content="21k" HorizontalAlignment="Left" Width="92"/>
 
         </ComboBox>
-        <Label Content="Carat:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,12,0,0" Height="26" Width="42"/>
-        <Label Content="18k Carat =" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,145,0,0" Height="26" Width="89" Grid.ColumnSpan="2"/>
-        <Label Content="21k Carat =" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,158,0,0" Height="26" Width="89" Grid.ColumnSpan="2"/>
-        <TextBlock Name="txtEightteenK" HorizontalAlignment="Left" Margin="80,150,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-15.125,0.613" Grid.ColumnSpan="2" Width="52"/>
-        <TextBlock Name="txtTwentyoneK" HorizontalAlignment="Left" Margin="80,163,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-15.125,0.613" Grid.ColumnSpan="2" Width="52"/>
+        <Label Content="Carat:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,18,0,0" Height="26" Width="42" RenderTransformOrigin="1.095,1.269"/>
+        <Label Content="18k Carat =" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,240,0,0" Height="26" Width="89" Grid.ColumnSpan="2"/>
+        <Label Content="21k Carat =" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,260,0,0" Height="26" Width="89" Grid.ColumnSpan="2"/>
+        <TextBlock Name="txtEightteenK" HorizontalAlignment="Left" Margin="80,245,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-15.125,0.613" Grid.ColumnSpan="2" Width="52"/>
+        <TextBlock Name="txtTwentyoneK" HorizontalAlignment="Left" Margin="80,265,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-15.125,0.613" Grid.ColumnSpan="2" Width="52"/>
 
     </Grid>
 </Window>

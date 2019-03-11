@@ -23,6 +23,10 @@ namespace OOP_Final_Project
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            foreach (string item in DataStorage.customerList)
+            {
+                cmbNameList.Items.Add(item);
+            }
         }
 
         private void CalculationLogic()
@@ -83,21 +87,7 @@ namespace OOP_Final_Project
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {           
-            foreach (string item in DataStorage.customerList)
-            {
-                cmbNameList.Items.Add(item);
-            }
-        }
 
-        private void AddName(object sender, RoutedEventArgs e)
-        {
-            AddNameWindow addName = new AddNameWindow();
-            addName.ShowDialog();
-            cmbNameList.Items.Clear();
-            foreach (string item in DataStorage.customerList)
-            {
-                cmbNameList.Items.Add(item);
-            }
         }
 
         private void WeightTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -158,5 +148,9 @@ namespace OOP_Final_Project
             this.Close();
         }
 
+        private void btnUseCurrentDate(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

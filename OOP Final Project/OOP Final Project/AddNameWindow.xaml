@@ -20,8 +20,8 @@
         <TextBox Name="txtNameLast" HorizontalAlignment="Left" Height="32" Margin="112,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Middle Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,46,0,0" Width="85"/>
         <Label Content="Last Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,89,0,0" Width="85"/>
-        <TextBox HorizontalAlignment="Left" Height="32" Margin="112,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="32" Margin="112,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtAddress"  HorizontalAlignment="Left" Height="32" Margin="112,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtContactNumber" HorizontalAlignment="Left" Height="32" Margin="112,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

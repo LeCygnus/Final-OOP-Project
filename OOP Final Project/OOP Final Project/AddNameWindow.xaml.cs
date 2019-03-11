@@ -44,6 +44,9 @@ namespace OOP_Final_Project
                 if (!exist)
                 {
                     DataStorage.customerList.Add(GetName.GetFullName());
+                    int size = DataStorage.customerList.Count - 1;
+                    DataStorage.address.Insert(size, txtAddress.Text);
+                    DataStorage.contactNumber.Insert(size, txtContactNumber.Text);
                     this.Close();
                 }
             }

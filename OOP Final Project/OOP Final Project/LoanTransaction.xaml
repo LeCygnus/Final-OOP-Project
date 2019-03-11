@@ -33,13 +33,13 @@
         <Label Content="Details:" HorizontalAlignment="Left" Margin="10,263,0,0" VerticalAlignment="Top"/>
         <Label Content="Actual Value:" HorizontalAlignment="Left" Margin="10,173,0,0" VerticalAlignment="Top"/>
         <TextBlock Name="actualValueText" HorizontalAlignment="Left" Margin="121,178,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="63,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143"/>
+        <TextBox HorizontalAlignment="Left" Height="87" Margin="72,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179"/>
         <Label Content="%" HorizontalAlignment="Left" Margin="176,147,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,1"/>
         <Label Content="Amount Loan:" HorizontalAlignment="Left" Margin="10,204,0,0" VerticalAlignment="Top"/>
         <DatePicker HorizontalAlignment="Left" Margin="125,233,0,0" VerticalAlignment="Top" Width="110"/>
         <Label Content="Date of Transaction:" HorizontalAlignment="Left" Margin="10,232,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtbAmountLoaned" HorizontalAlignment="Left" Height="31" Margin="121,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="114" TextChanged="txtDiscount_TextChanged"/>
-        <Button x:Name="btnCurrentDate" Content="Use Current Date" HorizontalAlignment="Left" Margin="263,226,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.732,1.418" Click="btnAddName_Click"/>
+        <Button x:Name="btnCurrentDate" Content="Use Current Date" HorizontalAlignment="Left" Margin="263,226,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.732,1.418" Click="btnUseCurrentDate"/>
 
     </Grid>
 </Window>

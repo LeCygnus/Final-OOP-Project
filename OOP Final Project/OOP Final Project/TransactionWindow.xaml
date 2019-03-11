@@ -5,11 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOP_Final_Project"
         mc:Ignorable="d"
-        Title="TransactionWindow" Height="350" Width="300">
+        Title="TransactionWindow" Height="350" Width="600">
     <Grid>
-        <Button Name="btnLoan" Content="Loan" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" Width="75" Click="btnLoan_Click"/>
-        <Button Name="btnPay" Content="Pay" HorizontalAlignment="Left" Margin="160,50,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnBack" Content="Menu" HorizontalAlignment="Left" Margin="103,99,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
+        <Button Name="btnLoan" Content="Loan" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="btnLoan_Click"/>
+        <Button Name="btnPay" Content="Pay" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnBack" Content="Menu" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
+        <ListView HorizontalAlignment="Left" Height="300" Margin="100,10,0,0" VerticalAlignment="Top" Width="477">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>
