@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace OOP_Final_Project
 {
     /// <summary>
-    /// Interaction logic for SetingsWindow.xaml
+    /// Interaction logic for SettingsWindow.xaml
     /// </summary>
     public partial class SettingsWindow : Window
     {

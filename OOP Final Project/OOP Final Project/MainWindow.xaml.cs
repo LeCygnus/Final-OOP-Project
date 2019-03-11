@@ -19,9 +19,8 @@ namespace OOP_Final_Project
     /// </summary>
     public partial class MainWindow : Window
     {
-        SettingsWindow Settings = new SettingsWindow();
+        SettingsWindow Settings;
         TransactionWindow Transactions;
-        public decimal[] priceArray;
         public MainWindow()
         {
             InitializeComponent();
@@ -45,10 +44,21 @@ namespace OOP_Final_Project
 
         private void ShowSettings(object sender, RoutedEventArgs e)
         {
+            if (Settings == null)
+            {
+                SettingsWindow Settings = new SettingsWindow();
                 this.Hide();
                 Settings.ShowDialog();
                 this.Show();
                 DataStorage.priceList = Settings.priceArray;
+            }
+            else
+            {
+                this.Hide();
+                Settings.ShowDialog();
+                this.Show();
+                DataStorage.priceList = Settings.priceArray;
+            }
         }
     }
     public static class DataStorage

@@ -33,48 +33,48 @@ namespace OOP_Final_Project
             switch (cmbJewelryQuality.Text)
             {
                 case "10k":
-                    if (txtWeight.Text == "")
+                    if (txtbWeight.Text == "")
                         weight = 0;
 
                     else
-                        weight = Convert.ToDecimal(txtWeight.Text);
+                        weight = Convert.ToDecimal(txtbWeight.Text);
 
-                    if (txtDiscount.Text == "")
+                    if (txtbDiscount.Text == "")
                         discount = 0;
 
                     else
-                        discount = Convert.ToDecimal(txtDiscount.Text)/100;
+                        discount = Convert.ToDecimal(txtbDiscount.Text)/100;
 
                     actualValueText.Text = Convert.ToString(DataStorage.priceList[0] * weight - (DataStorage.priceList[0] * weight * discount));
                     break;
 
                 case "18k":
-                    if (txtWeight.Text == "")
+                    if (txtbWeight.Text == "")
                         weight = 0;
 
                     else
-                        weight = Convert.ToDecimal(txtWeight.Text);
+                        weight = Convert.ToDecimal(txtbWeight.Text);
 
-                    if (txtDiscount.Text == "")
+                    if (txtbDiscount.Text == "")
                         discount = 0;
 
                     else
-                        discount = Convert.ToDecimal(txtDiscount.Text) / 100;
+                        discount = Convert.ToDecimal(txtbDiscount.Text) / 100;
 
                     actualValueText.Text = Convert.ToString(DataStorage.priceList[1] * weight - (DataStorage.priceList[1] * weight * discount));
                     break;
 
                 case "21k":
-                    if (txtWeight.Text == "")
+                    if (txtbWeight.Text == "")
                         weight = 0;
 
                     else
-                        weight = Convert.ToDecimal(txtWeight.Text);
+                        weight = Convert.ToDecimal(txtbWeight.Text);
 
-                    if (txtDiscount.Text == "")
+                    if (txtbDiscount.Text == "")
                         discount = 0;
                     else
-                        discount = Convert.ToDecimal(txtDiscount.Text) / 100;
+                        discount = Convert.ToDecimal(txtbDiscount.Text) / 100;
 
                     actualValueText.Text = Convert.ToString(DataStorage.priceList[2] * weight - (DataStorage.priceList[2] * weight * discount));
                     break;
