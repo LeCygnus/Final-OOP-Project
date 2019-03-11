@@ -31,7 +31,7 @@ namespace OOP_Final_Project
             }
         }
 
-        private void Button_Transactions(object sender, RoutedEventArgs e)
+        private void ShowTransactions(object sender, RoutedEventArgs e)
         {
             if (openTransactions == null)
             {
@@ -45,7 +45,7 @@ namespace OOP_Final_Project
             this.Hide();
         }
 
-        private void Button_Settings(object sender, RoutedEventArgs e)
+        private void ShowSettings(object sender, RoutedEventArgs e)
         {
             if(openSettings == null)
             {
