@@ -19,43 +19,79 @@ namespace OOP_Final_Project
     /// </summary>
     public partial class MainWindow : Window
     {
-        SettingsWindow openSettings;
-        TransactionWindow openTransactions;
+        SettingsWindow Settings;
+        TransactionWindow Transactions;
         public decimal[] priceArray;
         public MainWindow()
         {
             InitializeComponent();
-            if(priceArray == null)
-            {
-                priceArray = new decimal[3];
-            }
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void ShowTransactions(object sender, RoutedEventArgs e)
         {
-            if (openTransactions == null)
+            if (Transactions == null)
             {
-                openTransactions = new TransactionWindow();
-                openTransactions.Show();
+                Transactions = new TransactionWindow();
+                Transactions.Show();
+                this.Hide();
             }
             else
             {
-                openTransactions.Show();
+                Transactions.Show();
+                this.Hide();
             }
-            this.Hide();
         }
 
         private void ShowSettings(object sender, RoutedEventArgs e)
         {
-            if(openSettings == null)
+            if(Settings == null)
             {
-                openSettings = new SettingsWindow();
-                openSettings.Show();
+                Settings = new SettingsWindow();
+                this.Hide();
+                Settings.ShowDialog();
+                this.Show();
+                DataStorage.priceList = Settings.priceArray;              
             }
             else
             {
-                openSettings.Show();
+                this.Hide();
+                Settings.ShowDialog();
+                this.Show();
+                DataStorage.priceList = Settings.priceArray;
             }
+        }
+    }
+    public static class DataStorage
+    {
+        public static decimal[] priceList = new decimal[3];
+        public static List<string> customerList = new List<string>();
+        //public static List<string>  = new List<string>();
+
+        //public static List<int> = new List<int>();
+        //public static List<int> = new List<string>();
+
+        //public static List<decimal> priceList = new List<decimal>();
+
+    }
+
+    public static class StateofWindow
+    {
+        public static MainWindow openwindow;
+        
+        public static void Hidden()
+        {
+            //if(openwindow.IsActive)
+            //{
+            //    openwindow.Hide();
+            //}
+
+            MessageBox.Show("hi");
+        }
+
+        public static void Show()
+        {
+            openwindow.Show();
         }
     }
 }

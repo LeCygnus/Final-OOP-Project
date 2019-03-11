@@ -18,36 +18,122 @@ namespace OOP_Final_Project
     /// Interaction logic for LoanTransaction.xaml
     /// </summary>
     public partial class LoanTransaction : Window
-    {
+    {  
         public LoanTransaction()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void CalculationLogic()
         {
+            decimal weight;
+            decimal discount;
 
+            switch (cmbJewelryQuality.Text)
+            {
+                case "10k":
+                    if (txtWeight.Text == "")
+                        weight = 0;
+
+                    else
+                        weight = Convert.ToDecimal(txtWeight.Text);
+
+                    if (txtDiscount.Text == "")
+                        discount = 0;
+
+                    else
+                        discount = Convert.ToDecimal(txtDiscount.Text)/100;
+
+                    actualValueText.Text = Convert.ToString(DataStorage.priceList[0] * weight - (DataStorage.priceList[0] * weight * discount));
+                    break;
+
+                case "18k":
+                    if (txtWeight.Text == "")
+                        weight = 0;
+
+                    else
+                        weight = Convert.ToDecimal(txtWeight.Text);
+
+                    if (txtDiscount.Text == "")
+                        discount = 0;
+
+                    else
+                        discount = Convert.ToDecimal(txtDiscount.Text) / 100;
+
+                    actualValueText.Text = Convert.ToString(DataStorage.priceList[1] * weight - (DataStorage.priceList[1] * weight * discount));
+                    break;
+
+                case "21k":
+                    if (txtWeight.Text == "")
+                        weight = 0;
+
+                    else
+                        weight = Convert.ToDecimal(txtWeight.Text);
+
+                    if (txtDiscount.Text == "")
+                        discount = 0;
+                    else
+                        discount = Convert.ToDecimal(txtDiscount.Text) / 100;
+
+                    actualValueText.Text = Convert.ToString(DataStorage.priceList[2] * weight - (DataStorage.priceList[2] * weight * discount));
+                    break;
+            }
         }
 
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {           
+            foreach (string item in DataStorage.customerList)
+            {
+                cmbNameList.Items.Add(item);
+            }
         }
 
-        private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
+        private void AddName(object sender, RoutedEventArgs e)
         {
-
+            AddNameWindow addName = new AddNameWindow();
+            addName.ShowDialog();
+            cmbNameList.Items.Clear();
+            foreach (string item in DataStorage.customerList)
+            {
+                cmbNameList.Items.Add(item);
+            }
         }
 
-        private void TextBox_TextChanged_2(object sender, TextChangedEventArgs e)
+        private void WeightTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+            CalculationLogic();
         }
 
-        private void NameButton_Click(object sender, RoutedEventArgs e)
+        private void txtDiscount_TextChanged(object sender, TextChangedEventArgs e)
         {
-            AddNameWindow windowName = new AddNameWindow();
-            windowName.Show();
+            CalculationLogic();
+        }
+
+        private void cmbJewelryQuality_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CalculationLogic();
+        }
+
+        private void btnAddName_Click(object sender, RoutedEventArgs e)
+        {
+            AddNameWindow openAddNameWindow = new AddNameWindow();
+            openAddNameWindow.ShowDialog();
+            cmbNameList.Items.Clear();
+            foreach (string item in DataStorage.customerList)
+            {
+                cmbNameList.Items.Add(item);
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cmbJewelryQuality_DropDownClosed(object sender, EventArgs e)
+        {
+            CalculationLogic();
         }
     }
 }

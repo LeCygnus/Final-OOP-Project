@@ -5,19 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOP_Final_Project"
         mc:Ignorable="d"
-        Title="Add Name Window" Height="250" Width="350">
+        Title="Add Name Window" Height="350" Width="350">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="265*"/>
+            <ColumnDefinition Width="77*"/>
+        </Grid.ColumnDefinitions>
         <Label Content="First Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,15,0,0" Width="85"/>
-        <Label Content="Address:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,108,0,0" Width="60"/>
-        <Label Content="Contact #:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,139,0,0" Width="68"/>
-        <Button Content="Add" HorizontalAlignment="Center" Margin="85,0,85,10" VerticalAlignment="Bottom" Width="75" Click="Button_Click"/>
-        <TextBox Name="nameFirst"  HorizontalAlignment="Left" Height="23" Margin="112,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="nameMiddle"  HorizontalAlignment="Left" Height="23" Margin="112,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="nameLast" HorizontalAlignment="Left" Height="23" Margin="112,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Address:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,126,0,0" Width="60"/>
+        <Label Content="Contact #:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,162,0,0" Width="68"/>
+        <Button Content="Add" HorizontalAlignment="Center" Margin="130,0,61,37" VerticalAlignment="Bottom" Width="74" Click="Button_Click"/>
+        <TextBox Name="txtNameFirst"  HorizontalAlignment="Left" Height="32" Margin="112,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtNameMiddle"  HorizontalAlignment="Left" Height="32" Margin="112,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtNameLast" HorizontalAlignment="Left" Height="32" Margin="112,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Middle Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,46,0,0" Width="85"/>
-        <Label Content="Last Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,77,0,0" Width="85"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="112,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="112,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Last Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,89,0,0" Width="85"/>
+        <TextBox HorizontalAlignment="Left" Height="32" Margin="112,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="32" Margin="112,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
