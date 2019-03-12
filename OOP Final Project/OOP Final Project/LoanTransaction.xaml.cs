@@ -28,6 +28,7 @@ namespace OOP_Final_Project
                 cmbNameList.Items.Add(item);
             }
         }
+        public TransactionWindow transWindow;
 
         private void CalculationLogic()
         {
@@ -48,8 +49,7 @@ namespace OOP_Final_Project
 
                     else
                         discount = Convert.ToDecimal(txtbDiscount.Text)/100;
-
-                    actualValueText.Text = Convert.ToString(DataStorage.priceList[0] * weight - (DataStorage.priceList[0] * weight * discount));
+                    txtblockActualValue.Text = Convert.ToString(DataStorage.priceList[0] * weight - (DataStorage.priceList[0] * weight * discount));
                     break;
 
                 case "18k":
@@ -65,7 +65,7 @@ namespace OOP_Final_Project
                     else
                         discount = Convert.ToDecimal(txtbDiscount.Text) / 100;
 
-                    actualValueText.Text = Convert.ToString(DataStorage.priceList[1] * weight - (DataStorage.priceList[1] * weight * discount));
+                    txtblockActualValue.Text = Convert.ToString(DataStorage.priceList[1] * weight - (DataStorage.priceList[1] * weight * discount));
                     break;
 
                 case "21k":
@@ -80,7 +80,7 @@ namespace OOP_Final_Project
                     else
                         discount = Convert.ToDecimal(txtbDiscount.Text) / 100;
 
-                    actualValueText.Text = Convert.ToString(DataStorage.priceList[2] * weight - (DataStorage.priceList[2] * weight * discount));
+                    txtblockActualValue.Text = Convert.ToString(DataStorage.priceList[2] * weight - (DataStorage.priceList[2] * weight * discount));
                     break;
             }
         }
@@ -118,28 +118,28 @@ namespace OOP_Final_Project
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            bool checking = true;
+            Random pin = new Random();
+
             int codeListSize = DataStorage.eightDigitPin.Count - 1;
             int counter = 0;
-            Random pin = new Random();
             int randomPin = pin.Next(00000000, 100000000);
-            bool test = true;
 
-            
+            bool checking = true;
 
             while (checking && DataStorage.eightDigitPin.Count != 0)
             {
                 foreach (int codes in DataStorage.eightDigitPin)
                 {
-                    if (test)
+                    if (randomPin == codes)
                     {
                         randomPin = pin.Next(00000000, 100000000);
                         break;
                     }
                     counter++;
-                    if (codeListSize == counter)
+                    if (codeListSize < counter)
                     {
                         checking = false;
+                        break;
                     }
                 }
             }
@@ -150,13 +150,69 @@ namespace OOP_Final_Project
 
         private void btnUseCurrentDate(object sender, RoutedEventArgs e)
         {
-
+            dpDateOfTransaction.Text = DateTime.Now.ToString("MM/dd/yyyy");
         }
 
         private void btnAddTransaction_Click(object sender, RoutedEventArgs e)
         {
-            DataStorage.typeOfJewelry.Insert() = cmbTypeOfJewelry.Text;
-            DataStorage.
+            int index;
+            index = DataStorage.DataIndex(cmbNameList.Text);
+
+            if (DataStorage.accountBalance[index] == 0)
+            {
+                //Data storing
+                DataStorage.typeOfJewelry.Insert(index,cmbTypeOfJewelry.Text);
+                DataStorage.qualityOfJewelry.Insert(index, cmbJewelryQuality.Text);
+                DataStorage.weightOfJewelry.Insert(index, txtbWeight.Text);
+                DataStorage.discount.Insert(index, Convert.ToInt32(txtbDiscount.Text));
+                DataStorage.actualValue.Insert(index, Convert.ToDecimal(txtblockActualValue.Text));
+                DataStorage.amountLoaned.Insert(index, Convert.ToDecimal(txtbAmountLoaned.Text));
+                DataStorage.details.Insert(index, txtbDetails.Text);
+
+                //Generating of unique pin
+                Random pin = new Random();
+
+                int codeListSize = DataStorage.eightDigitPin.Count - 1;
+                int counter = 0;
+                int randomPin = pin.Next(00000000, 100000000);
+
+                bool checking = true;
+
+                //Duplicate Checker
+                while (checking && DataStorage.eightDigitPin.Count != 0)
+                {
+                    foreach (int codes in DataStorage.eightDigitPin)
+                    {
+                        if (randomPin == codes)
+                        {
+                            randomPin = pin.Next(00000000, 100000000);
+                            break;
+                        }
+                        counter++;
+                        if (codeListSize < counter)
+                        {
+                            checking = false;
+                            break;
+                        }
+                    }
+                }
+
+                //Adding Pin to Storage
+                DataStorage.eightDigitPin.Add(randomPin);
+
+                MessageBox.Show(Convert.ToString(randomPin));
+
+                this.Close();
+                transWindow.Show();
+            }
+            else if(DataStorage.accountBalance[index] > 0)
+            {
+                MessageBox.Show("Error! Customer still has " + "Php " + DataStorage.accountBalance[index] + " remaining in his account.");
+            }
+            else
+            {
+                MessageBox.Show("Error! Some fields have incorrect values or are blank.");
+            }
         }
     }
 }

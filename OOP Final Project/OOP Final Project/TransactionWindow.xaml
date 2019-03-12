@@ -5,14 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOP_Final_Project"
         mc:Ignorable="d"
-        Title="TransactionWindow" Height="350" Width="600">
+        Title="TransactionWindow" Height="540" Width="1280">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="311*"/>
+            <ColumnDefinition Width="325*"/>
+        </Grid.ColumnDefinitions>
         <Button Name="btnLoan" Content="Loan" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="btnLoan_Click"/>
         <Button Name="btnPay" Content="Pay" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnBack" Content="Menu" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
-        <ListView HorizontalAlignment="Left" Height="300" Margin="100,10,0,0" VerticalAlignment="Top" Width="477">
+        <ListView Name="listViewMasterList" HorizontalAlignment="Left" Height="490" Margin="100,10,0,0" VerticalAlignment="Top" Width="1162" Grid.ColumnSpan="2">
             <ListView.View>
                 <GridView>
+                    <GridViewColumn Header="No #" DisplayMemberBinding="{Binding ID}" Width="60"/>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="150"/>
+                    <GridViewColumn Header="Contact Number" DisplayMemberBinding="{Binding ContactNumber}" Width="150"/>
+                    <GridViewColumn Header="Date of Transaction" DisplayMemberBinding="{Binding Date}" Width="150"/>
+                    <GridViewColumn Header="Total Accumulated Amount" DisplayMemberBinding="{Binding AccumAmount}" Width="200"/>
+                    <GridViewColumn Header="Remaining Balance" DisplayMemberBinding="{Binding Balance}" Width="150"/>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>

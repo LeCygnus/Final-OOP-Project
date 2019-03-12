@@ -28,6 +28,7 @@ namespace OOP_Final_Project
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             if (txtNameFirst.Text != "" || txtNameMiddle.Text != "" || txtNameLast.Text != "" || txtAddress.Text != "" || txtContactNumber.Text != "")
             {
                 bool exist = false;
@@ -47,6 +48,7 @@ namespace OOP_Final_Project
                     int size = DataStorage.customerList.Count - 1;
                     DataStorage.address.Insert(size, txtAddress.Text);
                     DataStorage.contactNumber.Insert(size, txtContactNumber.Text);
+                    DataStorage.accountBalance.Insert(size, 0);
                     this.Close();
                 }
             }

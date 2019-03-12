@@ -63,6 +63,21 @@ namespace OOP_Final_Project
     }
     public static class DataStorage
     {
+        public static int DataIndex(string input)
+        {
+            int counter = 0;           
+            foreach (string name in customerList)
+            {
+                if(name == input)
+                {
+                    
+                    break;
+                }
+                counter++;
+            }
+            return counter;
+        }
+
         public static decimal[] priceList = new decimal[3];
         public static List<string> customerList = new List<string>();
         public static List<string> address = new List<string>();
@@ -78,7 +93,7 @@ namespace OOP_Final_Project
 
         public static List<decimal> actualValue = new List<decimal>();
         public static List<decimal> amountLoaned = new List<decimal>();
-
-
+        public static List<decimal> accountBalance = new List<decimal>();
     }
+
 }
