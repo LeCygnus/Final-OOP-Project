@@ -116,37 +116,6 @@ namespace OOP_Final_Project
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Random pin = new Random();
-
-            int codeListSize = DataStorage.eightDigitPin.Count - 1;
-            int counter = 0;
-            int randomPin = pin.Next(00000000, 100000000);
-
-            bool checking = true;
-
-            while (checking && DataStorage.eightDigitPin.Count != 0)
-            {
-                foreach (int codes in DataStorage.eightDigitPin)
-                {
-                    if (randomPin == codes)
-                    {
-                        randomPin = pin.Next(00000000, 100000000);
-                        break;
-                    }
-                    counter++;
-                    if (codeListSize < counter)
-                    {
-                        checking = false;
-                        break;
-                    }
-                }
-            }
-            DataStorage.eightDigitPin.Add(randomPin);
-            MessageBox.Show(Convert.ToString(randomPin));
-            this.Close();
-        }
 
         private void btnUseCurrentDate(object sender, RoutedEventArgs e)
         {
