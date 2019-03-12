@@ -28,7 +28,7 @@ namespace OOP_Final_Project
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (txtNameFirst.Text != "" || txtNameMiddle.Text != "" || txtNameLast.Text != "")
+            if (txtNameFirst.Text != "" || txtNameMiddle.Text != "" || txtNameLast.Text != "" || txtAddress.Text != "" || txtContactNumber.Text != "")
             {
                 bool exist = false;
                 PersonClass GetName = new PersonClass(txtNameFirst.Text, txtNameLast.Text, txtNameMiddle.Text);
@@ -49,6 +49,10 @@ namespace OOP_Final_Project
                     DataStorage.contactNumber.Insert(size, txtContactNumber.Text);
                     this.Close();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please fill up the empty boxes.");
             }
             this.Close();
         }

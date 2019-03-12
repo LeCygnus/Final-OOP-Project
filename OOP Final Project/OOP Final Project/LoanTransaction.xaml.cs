@@ -152,5 +152,11 @@ namespace OOP_Final_Project
         {
 
         }
+
+        private void btnAddTransaction_Click(object sender, RoutedEventArgs e)
+        {
+            DataStorage.typeOfJewelry.Insert() = cmbTypeOfJewelry.Text;
+            DataStorage.
+        }
     }
 }
