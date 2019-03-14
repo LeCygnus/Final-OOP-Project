@@ -34,6 +34,7 @@ namespace OOP_Final_Project
                 bool exist = false;
                 PersonClass GetName = new PersonClass(txtNameFirst.Text, txtNameLast.Text, txtNameMiddle.Text);
 
+                //Checking for duplicates
                 foreach (string name in DataStorage.customerList)
                 {
                     if (name == GetName.GetFullName())
@@ -44,6 +45,7 @@ namespace OOP_Final_Project
                 }
                 if (!exist)
                 {
+                    //Reserving essential data slots for the newly added user
                     DataStorage.customerList.Add(GetName.GetFullName());
                     int size = DataStorage.customerList.Count - 1;
                     DataStorage.address.Insert(size, txtAddress.Text);

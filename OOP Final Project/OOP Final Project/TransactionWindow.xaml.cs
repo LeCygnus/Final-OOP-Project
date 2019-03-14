@@ -21,7 +21,16 @@ namespace OOP_Final_Project
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            listViewMasterList.Items.Add(new ListViewItems() { ID = "1", Name = "Brenn", ContactNumber="09329580029", Date="3/13/2019", AccumAmount="10000", Balance="5000"});
+            //listViewMasterList.Items.Add(new ListViewItems() { ID = "1", Name = "Brenn", ContactNumber="09329580029", Date="3/13/2019", AccumAmount="10000", Balance="5000"});
+
+            ListView view = new ListView();
+            view.
+            listViewMasterList.Items[0].;
+        }
+
+        public void MasterListItems()
+        {
+            List<string> itemList = new List<string>();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -38,7 +47,7 @@ namespace OOP_Final_Project
             public string AccumAmount { get; set; }
             public string Balance { get; set; }
         }
-
+        
         private void btnLoan_Click(object sender, RoutedEventArgs e)
         {
             LoanTransaction openTransactionWindow = new LoanTransaction();
@@ -51,6 +60,11 @@ namespace OOP_Final_Project
         {
             App.Current.MainWindow.Show();
             this.Hide();
+        }
+
+        private void listViewMasterList_Initialized(object sender, EventArgs e)
+        {
+
         }
     }
 }
