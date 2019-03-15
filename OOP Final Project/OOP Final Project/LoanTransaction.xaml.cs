@@ -27,8 +27,7 @@ namespace OOP_Final_Project
             {
                 cmbNameList.Items.Add(item);
             }
-        }
-        public TransactionWindow transWindow;
+        }            
 
         private void CalculationLogic()
         {
@@ -123,7 +122,7 @@ namespace OOP_Final_Project
         }
 
         private void btnAddTransaction_Click(object sender, RoutedEventArgs e)
-        {
+        {         
             int index;
             index = DataStorage.DataIndex(cmbNameList.Text);
 
@@ -132,11 +131,13 @@ namespace OOP_Final_Project
                 //Data storing
                 DataStorage.typeOfJewelry.Insert(index,cmbTypeOfJewelry.Text);
                 DataStorage.qualityOfJewelry.Insert(index, cmbJewelryQuality.Text);
-                DataStorage.weightOfJewelry.Insert(index, txtbWeight.Text);
+                DataStorage.weightOfJewelry.Insert(index, Convert.ToDecimal(txtbWeight.Text));
                 DataStorage.discount.Insert(index, Convert.ToInt32(txtbDiscount.Text));
                 DataStorage.actualValue.Insert(index, Convert.ToDecimal(txtblockActualValue.Text));
+                DataStorage.dateOfTransaction.Insert(index, dpDateOfTransaction.Text);
                 DataStorage.amountLoaned.Insert(index, Convert.ToDecimal(txtbAmountLoaned.Text));
-                DataStorage.details.Insert(index, txtbDetails.Text);
+                DataStorage.interestRate.Insert(index, Convert.ToInt32(txtbInterestRate.Text));
+                DataStorage.details.Insert(index, rtbDetails.Text);
 
                 //Generating of unique pin
                 Random pin = new Random();
@@ -172,6 +173,8 @@ namespace OOP_Final_Project
                 MessageBox.Show(Convert.ToString(randomPin));
 
                 this.Close();
+
+                TransactionWindow transWindow = new TransactionWindow();
                 transWindow.Show();
             }
             else if(DataStorage.accountBalance[index] > 0)

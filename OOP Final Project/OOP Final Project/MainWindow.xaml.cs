@@ -29,17 +29,8 @@ namespace OOP_Final_Project
 
         private void ShowTransactions(object sender, RoutedEventArgs e)
         {
-            if (Transactions == null)
-            {
                 Transactions = new TransactionWindow();
                 Transactions.Show();
-                this.Hide();
-            }
-            else
-            {
-                Transactions.Show();
-                this.Hide();
-            }
         }
 
         private void ShowSettings(object sender, RoutedEventArgs e)
@@ -84,13 +75,14 @@ namespace OOP_Final_Project
         public static List<string> contactNumber = new List<string>();
         public static List<string> typeOfJewelry = new List<string>();
         public static List<string> qualityOfJewelry = new List<string>();
-        public static List<string> weightOfJewelry = new List<string>();
         public static List<string> dateOfTransaction = new List<string>();
         public static List<string> details = new List<string>();
 
         public static List<int> discount = new List<int>();       
+        public static List<int> interestRate = new List<int>();       
         public static List<int> eightDigitPin = new List<int>();
 
+        public static List<decimal> weightOfJewelry = new List<decimal>();
         public static List<decimal> actualValue = new List<decimal>();
         public static List<decimal> amountLoaned = new List<decimal>();
         public static List<decimal> accountBalance = new List<decimal>();

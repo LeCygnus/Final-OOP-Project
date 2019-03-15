@@ -21,11 +21,30 @@ namespace OOP_Final_Project
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            //listViewMasterList.Items.Add(new ListViewItems() { ID = "1", Name = "Brenn", ContactNumber="09329580029", Date="3/13/2019", AccumAmount="10000", Balance="5000"});
+            ListDetails();
 
-            ListView view = new ListView();
-            view.
-            listViewMasterList.Items[0].;
+        }
+
+        public void ListDetails()
+        {
+            List<CustomerDetails> itemList = new List<CustomerDetails>();
+
+            int maxIndex = DataStorage.customerList.Count;
+
+            for (int index = 0; index < maxIndex; index++)
+            {
+                itemList.Add(new CustomerDetails()
+                {
+                    ID = index,
+                    Name = DataStorage.customerList[index],
+                    TransactionDate = DataStorage.dateOfTransaction[index],
+                    AmountLoaned = DataStorage.amountLoaned[index],
+                    InterestRate = DataStorage.interestRate[index],
+                    Balance = DataStorage.accountBalance[index]
+                });
+            }
+
+            listViewMasterList.ItemsSource = itemList;
         }
 
         public void MasterListItems()
@@ -37,34 +56,51 @@ namespace OOP_Final_Project
         {
 
         }
-
-        class ListViewItems
-        {
-            public string ID { get; set; }
-            public string Name { get; set; }
-            public string ContactNumber { get; set; }
-            public string Date { get; set; }
-            public string AccumAmount { get; set; }
-            public string Balance { get; set; }
-        }
         
         private void btnLoan_Click(object sender, RoutedEventArgs e)
         {
             LoanTransaction openTransactionWindow = new LoanTransaction();
-            openTransactionWindow.transWindow = this;
             openTransactionWindow.Show();
-            this.Hide();
+            this.Close();
+        }
+
+        private void btnPay_Click(object sender, RoutedEventArgs e)
+        {
+            //openTransactionWindow.ShowDialog();
+            this.Show();
+            if (DataStorage.customerList != null)
+                ListDetails();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             App.Current.MainWindow.Show();
-            this.Hide();
+            this.Close();
         }
+
 
         private void listViewMasterList_Initialized(object sender, EventArgs e)
         {
 
         }
+
+        private void listViewMasterList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+
     }
+
+    public class CustomerDetails
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string TransactionDate { get; set; }
+        public decimal AmountLoaned { get; set; }
+        public decimal InterestRate { get; set; }
+        public decimal Balance { get; set; }       
+    }
+
+
 }
