@@ -51,6 +51,18 @@ namespace OOP_Final_Project
                 DataStorage.priceList = Settings.priceArray;
             }
         }
+
+        private void BtnOpenMenu_ClickEvent(object sender, RoutedEventArgs e)
+        {
+            btnOpenMenu.Visibility = Visibility.Collapsed;
+            btnCloseMenu.Visibility = Visibility.Visible;
+        }
+
+        private void BtnCloseMenu_ClickEvent(object sender, RoutedEventArgs e)
+        {
+            btnCloseMenu.Visibility = Visibility.Collapsed;
+            btnOpenMenu.Visibility = Visibility.Visible;
+        }
     }
     public static class DataStorage
     {
