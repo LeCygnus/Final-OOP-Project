@@ -77,6 +77,8 @@ namespace OOP_Final_Project
         public static List<string> qualityOfJewelry = new List<string>();
         public static List<string> dateOfTransaction = new List<string>();
         public static List<string> details = new List<string>();
+        public static List<string> dateOFLastTransaction = new List<string>();
+        public static List<string> customersWithPendingBalance = new List<string>();
 
         public static List<int> discount = new List<int>();       
         public static List<int> interestRate = new List<int>();       
