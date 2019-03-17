@@ -47,25 +47,10 @@ namespace OOP_Final_Project
                 {
                     //Reserving essential data slots for the newly added user
                     DataStorage.customerList.Add(GetName.GetFullName());
-                    DataStorage.address.Add("");
-                    DataStorage.contactNumber.Add("");
-                    DataStorage.dateOFLastTransaction.Add("");
-                    DataStorage.dateOfTransaction.Add("");
-
-                    DataStorage.accountBalance.Add(0);
-                    DataStorage.typeOfJewelry.Add("");
-                    DataStorage.qualityOfJewelry.Add("");
-                    DataStorage.details.Add("");
-
-                    DataStorage.weightOfJewelry.Add(0);
-                    DataStorage.discount.Add(0);
-                    DataStorage.actualValue.Add(0);
-                    DataStorage.amountLoaned.Add(0);
-                    DataStorage.accountBalance.Add(0);
-                    DataStorage.interestRate.Add(0);
-
-
-
+                    int size = DataStorage.customerList.Count - 1;
+                    DataStorage.address.Insert(size, txtAddress.Text);
+                    DataStorage.contactNumber.Insert(size, txtContactNumber.Text);
+                    DataStorage.accountBalance.Insert(size, 0);
                     this.Close();
                 }
             }

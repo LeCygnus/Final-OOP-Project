@@ -31,8 +31,8 @@ namespace OOP_Final_Project
 
         private void CalculationLogic()
         {
-            decimal weight = 0;
-            decimal discount = 0;
+            decimal weight;
+            decimal discount;
 
             switch (cmbJewelryQuality.Text)
             {
@@ -40,15 +40,14 @@ namespace OOP_Final_Project
                     if (txtbWeight.Text == "")
                         weight = 0;
 
-                    else if (Convert.ToDecimal(txtbWeight.Text) >= 0)
+                    else
                         weight = Convert.ToDecimal(txtbWeight.Text);
 
                     if (txtbDiscount.Text == "")
                         discount = 0;
 
-                    else if (Convert.ToDecimal(txtbDiscount.Text) >= 0)
+                    else
                         discount = Convert.ToDecimal(txtbDiscount.Text)/100;
-
                     txtblockActualValue.Text = Convert.ToString(DataStorage.priceList[0] * weight - (DataStorage.priceList[0] * weight * discount));
                     break;
 
@@ -56,13 +55,13 @@ namespace OOP_Final_Project
                     if (txtbWeight.Text == "")
                         weight = 0;
 
-                    else if (Convert.ToDecimal(txtbWeight.Text) >= 0)
+                    else
                         weight = Convert.ToDecimal(txtbWeight.Text);
 
                     if (txtbDiscount.Text == "")
                         discount = 0;
 
-                    else if (Convert.ToDecimal(txtbDiscount.Text) >= 0)
+                    else
                         discount = Convert.ToDecimal(txtbDiscount.Text) / 100;
 
                     txtblockActualValue.Text = Convert.ToString(DataStorage.priceList[1] * weight - (DataStorage.priceList[1] * weight * discount));
@@ -72,12 +71,12 @@ namespace OOP_Final_Project
                     if (txtbWeight.Text == "")
                         weight = 0;
 
-                    else if(Convert.ToDecimal(txtbWeight.Text) >= 0)
+                    else
                         weight = Convert.ToDecimal(txtbWeight.Text);
 
                     if (txtbDiscount.Text == "")
                         discount = 0;
-                    else if (Convert.ToDecimal(txtbDiscount.Text) >= 0)
+                    else
                         discount = Convert.ToDecimal(txtbDiscount.Text) / 100;
 
                     txtblockActualValue.Text = Convert.ToString(DataStorage.priceList[2] * weight - (DataStorage.priceList[2] * weight * discount));
@@ -137,7 +136,6 @@ namespace OOP_Final_Project
                 DataStorage.actualValue.Insert(index, Convert.ToDecimal(txtblockActualValue.Text));
                 DataStorage.dateOfTransaction.Insert(index, dpDateOfTransaction.Text);
                 DataStorage.amountLoaned.Insert(index, Convert.ToDecimal(txtbAmountLoaned.Text));
-                DataStorage.accountBalance.Insert(index, Convert.ToDecimal(txtbAmountLoaned.Text));
                 DataStorage.interestRate.Insert(index, Convert.ToInt32(txtbInterestRate.Text));
                 DataStorage.details.Insert(index, rtbDetails.Text);
 
