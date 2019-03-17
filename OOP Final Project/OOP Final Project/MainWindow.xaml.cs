@@ -20,17 +20,18 @@ namespace OOP_Final_Project
     public partial class MainWindow : Window
     {
         SettingsWindow Settings;
-        TransactionWindow Transactions;
+        TransactionWindow transWin;
         public MainWindow()
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            this.WindowState = WindowState.Maximized;
+            DebugList();
         }
 
         private void ShowTransactions(object sender, RoutedEventArgs e)
         {
-                Transactions = new TransactionWindow();
-                Transactions.Show();
+
         }
 
         private void ShowSettings(object sender, RoutedEventArgs e)
@@ -63,17 +64,47 @@ namespace OOP_Final_Project
             btnCloseMenu.Visibility = Visibility.Collapsed;
             btnOpenMenu.Visibility = Visibility.Visible;
         }
+
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {          
+
+            switch (ListViewMenu.SelectedIndex)
+            {
+                case 3:
+                    transWin = new TransactionWindow();
+                    this.Hide();
+                    transWin.Show();
+                    ListViewMenu.SelectedIndex = -1;
+                    break;
+                case 4:
+                   // usc = new LoanTransaction();
+                   // GridMain.Children.Add(usc);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void DebugList()
+        {
+            DataStorage.customerList.Add("Brenn");
+            DataStorage.dateOfTransaction.Add("3/17/2019");
+            DataStorage.amountLoaned.Add(10000);
+            DataStorage.interestRate.Add(5);
+            DataStorage.accountBalance.Add(10000);
+
+        }
     }
     public static class DataStorage
     {
         public static int DataIndex(string input)
         {
-            int counter = 0;           
+            int counter = 0;
             foreach (string name in customerList)
             {
-                if(name == input)
+                if (name == input)
                 {
-                    
+
                     break;
                 }
                 counter++;
@@ -82,7 +113,7 @@ namespace OOP_Final_Project
         }
 
         public static decimal[] priceList = new decimal[3];
-        public static List<string> customerList = new List<string>();
+        public static List<string> customerList = new List<string>();      
         public static List<string> address = new List<string>();
         public static List<string> contactNumber = new List<string>();
         public static List<string> typeOfJewelry = new List<string>();

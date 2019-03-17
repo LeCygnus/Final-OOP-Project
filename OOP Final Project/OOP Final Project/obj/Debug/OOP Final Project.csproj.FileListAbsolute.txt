@@ -106,3 +106,5 @@ C:\Users\asus\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Pro
 C:\Users\asus\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\OOP Final Project.csproj.CopyComplete
 C:\Users\asus\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\OOP Final Project.exe
 C:\Users\asus\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\OOP Final Project.pdb
+C:\Users\asus\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\UserControl1.g.cs
+C:\Users\asus\Documents\GitHub\Final-OOP-Project\OOP Final Project\OOP Final Project\obj\Debug\UserControl1.baml

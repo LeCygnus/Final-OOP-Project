@@ -7,7 +7,7 @@
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:OOP_Final_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="480" Width="600">
+        Title="MainWindow" Height="520" Width="1080">
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -41,7 +41,7 @@
             </Grid>
 
             <Grid Height="60" VerticalAlignment="Top" Background="#5F31F3">
-            <TextBlock Text="Exquisite Velvet" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Foreground="White" ></TextBlock>
+            <TextBlock Text="Majesty" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Foreground="White" ></TextBlock>
             </Grid>
             <Grid x:Name="GridMenu"  Width="60" HorizontalAlignment="Left" Background="#3C04F2">
             <StackPanel>
@@ -53,7 +53,7 @@
                         <materialDesign:PackIcon Kind="HamburgerMenu" Width="25" Height="25" Foreground="#FF564887" Margin="10"/>
                     </Button>
                 </Grid>
-                <ListView ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#C5B7F1" Height="300">
+                <ListView Name="ListViewMenu" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#C5B7F1" Height="300" SelectionChanged="ListViewMenu_SelectionChanged">
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Home" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
@@ -72,7 +72,7 @@
                             <TextBlock Text="Add Transaction" VerticalAlignment="Center" Margin="15 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Height="60">
+                    <ListViewItem x:Name="TransactionList"  Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ViewList" Width="25" Height="25" VerticalAlignment="Center" Margin="10"/>
                             <TextBlock Text="Transaction List" VerticalAlignment="Center" Margin="15 10"/>
@@ -87,16 +87,5 @@
                 </ListView>
             </StackPanel>
             </Grid>
-
-            <Button Name="btnTransactions" Content="Transactions" HorizontalAlignment="Left" Margin="159,241,0,0" VerticalAlignment="Top" Width="126" Height="51" Click="ShowTransactions">
-            <Button.Effect>
-                <DropShadowEffect ShadowDepth="1"/>
-                </Button.Effect>
-            </Button>
-            <Button Name ="btnSettings" Content="Settings" HorizontalAlignment="Left" Margin="303,241,0,0" VerticalAlignment="Top" Width="126" Height="51" Click="ShowSettings">
-                <Button.Effect>
-                    <DropShadowEffect ShadowDepth="1"/>
-                </Button.Effect>
-            </Button>
-        </Grid>
+    </Grid>
 </Window>

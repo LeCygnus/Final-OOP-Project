@@ -21,6 +21,7 @@ namespace OOP_Final_Project
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            this.WindowState = WindowState.Maximized;
             ListDetails();
 
         }

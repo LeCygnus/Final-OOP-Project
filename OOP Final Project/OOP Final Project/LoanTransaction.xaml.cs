@@ -177,7 +177,7 @@ namespace OOP_Final_Project
                 this.Close();
 
                 TransactionWindow transWindow = new TransactionWindow();
-                transWindow.Show();
+
             }
             else if(DataStorage.accountBalance[index] > 0)
             {
