@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:OOP_Final_Project"
         mc:Ignorable="d"
         Title="Add Name Window" Height="350" Width="350">
-    <Grid>
+    <Grid Background="NavajoWhite">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="265*"/>
             <ColumnDefinition Width="77*"/>

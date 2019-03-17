@@ -8,38 +8,43 @@ namespace OOP_Final_Project
 {
     public class AccruedCalculations
     {
-        static int MonthsAccruedCalculations(int userDay, int userMonth, int userYear)
+        public static int MonthsAccrued(string date)
         {
+            string[] dateArray = date.Split('/');
 
-            int currentDay = Convert.ToInt32(DateTime.Now.ToString("dd"));
+            int transactionMonth = Convert.ToInt32(dateArray[0]);
+            int transactionDay = Convert.ToInt32(dateArray[1]);
+            int transactionYear = Convert.ToInt32(dateArray[2]);
+
             int currentMonth = Convert.ToInt32(DateTime.Now.ToString("MM"));
+            int currentDay = Convert.ToInt32(DateTime.Now.ToString("dd"));
             int currentYear = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
 
             int monthsAccrued = 0;
 
             // 1/5/16
-            if (currentYear > userYear) //2018 > 2016
+            if (currentYear > transactionYear) //2018 > 2016
             {
-                monthsAccrued = (currentYear - userYear) * 12; // 2018 - 2016 = 2 * 12 = 24
+                monthsAccrued = (currentYear - transactionYear) * 12; // 2018 - 2016 = 2 * 12 = 24
             }
 
-            if (currentMonth > userMonth) // 3 > 5
+            if (currentMonth > transactionMonth) // 3 > 5
             {
                 //monthsAccrued = (monthsAccrued + currentMonth) - userMonth;
-                if (currentDay >= userDay)
+                if (currentDay >= transactionDay)
                 {
-                    monthsAccrued = monthsAccrued + (currentMonth - userMonth);
+                    monthsAccrued = monthsAccrued + (currentMonth - transactionMonth);
                 }
                 else
                 {
-                    monthsAccrued = (monthsAccrued + (currentMonth - userMonth)) - 1;
+                    monthsAccrued = (monthsAccrued + (currentMonth - transactionMonth)) - 1;
                     if (monthsAccrued < 0)
                         monthsAccrued = 0;
                 }
             }
-            else if (currentMonth == userMonth)
+            else if (currentMonth == transactionMonth)
             {
-                if (currentDay < userDay)
+                if (currentDay < transactionDay)
                 {
                     monthsAccrued = monthsAccrued - 1;
                     if (monthsAccrued < 0)
@@ -48,13 +53,13 @@ namespace OOP_Final_Project
             }
             else// (currentMonth < userMonth)
             {
-                if (currentDay >= userDay)
+                if (currentDay >= transactionDay)
                 {
-                    monthsAccrued = monthsAccrued - (userMonth - currentMonth);
+                    monthsAccrued = monthsAccrued - (transactionMonth - currentMonth);
                 }
                 else
                 {
-                    monthsAccrued = monthsAccrued - (userMonth - (currentMonth - 1));
+                    monthsAccrued = monthsAccrued - (transactionMonth - (currentMonth - 1));
                     if (monthsAccrued < 0)
                         monthsAccrued = 0;
                 }
@@ -64,7 +69,7 @@ namespace OOP_Final_Project
 
         }
 
-        static double AccruedAmount(double calcInterest, double calcPrincipal, int calcMonth)
+        public static decimal AccruedAmount(decimal calcInterest, decimal calcPrincipal, int calcMonth)
         {
             calcInterest = calcInterest / 100;
             return calcPrincipal + (calcPrincipal * calcInterest * calcMonth);

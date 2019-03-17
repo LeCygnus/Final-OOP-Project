@@ -6,17 +6,17 @@
         xmlns:local="clr-namespace:OOP_Final_Project"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="TransactionWindow" Height="540" Width="1280">
+        Title="TransactionWindow" Height="540" Width="1080">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="419*"/>
             <ColumnDefinition Width="231*"/>
             <ColumnDefinition Width="622*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="btnLoan" FontSize="25" Content="Loan" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Width="185" Click="btnLoan_Click" Height="105"/>
-        <Button Name="btnPay" FontSize="25" Content="Pay" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" Width="185" Height="106" Click="btnPay_Click"/>
-        <Button x:Name="btnBack" FontSize="25" Content="Menu" HorizontalAlignment="Left" Margin="10,377,0,0" VerticalAlignment="Top" Width="185" Click="btnBack_Click" Height="105"/>
-        <ListView Name="listViewMasterList" FontSize="20" HorizontalAlignment="Left" Height="490" Margin="200,10,0,0" VerticalAlignment="Top" Width="1062" Grid.ColumnSpan="3" AutomationProperties.Name="listViewMasterList" Initialized="listViewMasterList_Initialized" SelectionChanged="listViewMasterList_SelectionChanged">
+        <Button Name="btnLoan" FontSize="25" Content="Add Loan" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="143" Click="btnLoan_Click" Height="70"/>
+        <Button Name="btnPay" FontSize="25" Content="Pay" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="143" Height="70" Click="btnPay_Click"/>
+        <Button x:Name="btnBack" FontSize="25" Content="Menu" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Width="143" Click="btnBack_Click" Height="70"/>
+        <ListView Name="listViewMasterList" FontSize="20" HorizontalAlignment="Right" Height="Auto" Margin="0,10,354,0" VerticalAlignment="Top" Width="560" AutomationProperties.Name="listViewMasterList" Initialized="listViewMasterList_Initialized" SelectionChanged="listViewMasterList_SelectionChanged" Grid.ColumnSpan="3">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="No #" Width="75" DisplayMemberBinding="{Binding ID}" ></GridViewColumn>

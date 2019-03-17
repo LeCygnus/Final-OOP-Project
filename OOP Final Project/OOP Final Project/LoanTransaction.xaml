@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:OOP_Final_Project"
         mc:Ignorable="d"
         Title="LoanTransaction" Height="450" Width="450">
-    <Grid>
+    <Grid Background="NavajoWhite">
         <Button Content="Add Transaction" HorizontalAlignment="Left" Margin="160,378,0,0" VerticalAlignment="Top" Width="143" RenderTransformOrigin="0.732,1.418" Click="btnAddTransaction_Click"></Button>
                 <Label Content="Name:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top"/>
         <Label Content="Type of Jewelry:" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top"/>

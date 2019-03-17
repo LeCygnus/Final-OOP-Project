@@ -18,7 +18,9 @@ namespace OOP_Final_Project
     /// Interaction logic for LoanTransaction.xaml
     /// </summary>
     public partial class LoanTransaction : Window
-    {  
+    {
+        public MainWindow main;
+
         public LoanTransaction()
         {
             InitializeComponent();
@@ -47,8 +49,8 @@ namespace OOP_Final_Project
                         discount = 0;
 
                     else
-                        discount = Convert.ToDecimal(txtbDiscount.Text)/100;
-                    txtblockActualValue.Text = Convert.ToString(DataStorage.priceList[0] * weight - (DataStorage.priceList[0] * weight * discount));
+                        discount = Convert.ToDecimal(txtbDiscount.Text);
+                    txtblockActualValue.Text = Convert.ToString(DataStorage.priceArray[0] * (weight - discount));
                     break;
 
                 case "18k":
@@ -62,9 +64,9 @@ namespace OOP_Final_Project
                         discount = 0;
 
                     else
-                        discount = Convert.ToDecimal(txtbDiscount.Text) / 100;
+                        discount = Convert.ToDecimal(txtbDiscount.Text);
 
-                    txtblockActualValue.Text = Convert.ToString(DataStorage.priceList[1] * weight - (DataStorage.priceList[1] * weight * discount));
+                    txtblockActualValue.Text = Convert.ToString(DataStorage.priceArray[0] * (weight - discount));
                     break;
 
                 case "21k":
@@ -77,9 +79,9 @@ namespace OOP_Final_Project
                     if (txtbDiscount.Text == "")
                         discount = 0;
                     else
-                        discount = Convert.ToDecimal(txtbDiscount.Text) / 100;
+                        discount = Convert.ToDecimal(txtbDiscount.Text);
 
-                    txtblockActualValue.Text = Convert.ToString(DataStorage.priceList[2] * weight - (DataStorage.priceList[2] * weight * discount));
+                    txtblockActualValue.Text = Convert.ToString(DataStorage.priceArray[0] * (weight - discount));
                     break;
             }
         }
@@ -132,12 +134,23 @@ namespace OOP_Final_Project
                 DataStorage.typeOfJewelry.Insert(index,cmbTypeOfJewelry.Text);
                 DataStorage.qualityOfJewelry.Insert(index, cmbJewelryQuality.Text);
                 DataStorage.weightOfJewelry.Insert(index, Convert.ToDecimal(txtbWeight.Text));
+
                 DataStorage.discount.Insert(index, Convert.ToInt32(txtbDiscount.Text));
                 DataStorage.actualValue.Insert(index, Convert.ToDecimal(txtblockActualValue.Text));
                 DataStorage.dateOfTransaction.Insert(index, dpDateOfTransaction.Text);
+
                 DataStorage.amountLoaned.Insert(index, Convert.ToDecimal(txtbAmountLoaned.Text));
-                DataStorage.interestRate.Insert(index, Convert.ToInt32(txtbInterestRate.Text));
+                DataStorage.interestRate.Insert(index, Convert.ToDecimal(txtbInterestRate.Text));
+                DataStorage.accumulatedAmount.Insert(index, Convert.ToDecimal(txtbAmountLoaned.Text));
+
+                DataStorage.dateOfLastPayment.Insert(index, dpDateOfTransaction.Text);
                 DataStorage.details.Insert(index, rtbDetails.Text);
+                DataStorage.dateUpdated.Insert(index, dpDateOfTransaction.Text);
+
+                DataStorage.accountBalance.Insert(index, Convert.ToDecimal(txtbAmountLoaned.Text));
+
+
+
 
                 //Generating of unique pin
                 Random pin = new Random();
@@ -173,8 +186,7 @@ namespace OOP_Final_Project
                 MessageBox.Show(Convert.ToString(randomPin));
 
                 this.Close();
-
-                TransactionWindow transWindow = new TransactionWindow();
+                main.ListDetails();
 
             }
             else if(DataStorage.accountBalance[index] > 0)

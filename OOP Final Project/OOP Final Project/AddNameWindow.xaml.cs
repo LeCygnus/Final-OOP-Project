@@ -47,16 +47,16 @@ namespace OOP_Final_Project
                 {
                     //Reserving essential data slots for the newly added user
                     DataStorage.customerList.Add(GetName.GetFullName());
-                    int size = DataStorage.customerList.Count - 1;
-                    DataStorage.address.Insert(size, txtAddress.Text);
-                    DataStorage.contactNumber.Insert(size, txtContactNumber.Text);
-                    DataStorage.accountBalance.Insert(size, 0);
+                    DataStorage.address.Add(txtAddress.Text);
+                    DataStorage.contactNumber.Add(txtContactNumber.Text);
+                    DataStorage.accountBalance.Add(0);
+                    DataStorage.dateOfLastPayment.Add("");
                     this.Close();
                 }
             }
             else
             {
-                MessageBox.Show("Please fill up the empty boxes.");
+                MessageBox.Show("Please fill up the empty boxes!", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
             this.Close();
         }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:OOP_Final_Project"
         mc:Ignorable="d"
         Title="SettingsWindow" Height="325" Width="220">
-    <Grid>
+    <Grid Background="NavajoWhite">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>

@@ -19,16 +19,13 @@ namespace OOP_Final_Project
     /// </summary>
     public partial class SettingsWindow : Window
     {
-        public decimal[] priceArray;
+        public MainWindow main;
+
 
         public SettingsWindow()
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            if (priceArray == null)
-            {
-                priceArray = new decimal[3];
-            }
         }
 
 
@@ -41,21 +38,21 @@ namespace OOP_Final_Project
                 case "10k":
                     if (priceGram.Text == "")
                         priceGram.Text = "0";
-                    priceArray[0] = Convert.ToDecimal(priceGram.Text);
+                    DataStorage.priceArray[0] = Convert.ToDecimal(priceGram.Text);
                     txtTenK.Text = priceGram.Text;
                     break;
 
                 case "18k":
                     if (priceGram.Text == "")
                         priceGram.Text = "0";
-                    priceArray[1] = Convert.ToDecimal(priceGram.Text);
+                    DataStorage.priceArray[1] = Convert.ToDecimal(priceGram.Text);
                     txtEightteenK.Text = priceGram.Text;
                     break;
 
                 case "21k":
                     if (priceGram.Text == "")
                         priceGram.Text = "0";
-                    priceArray[2] = Convert.ToDecimal(priceGram.Text);
+                    DataStorage.priceArray[2] = Convert.ToDecimal(priceGram.Text);
                     txtTwentyoneK.Text = priceGram.Text;
                     break;
 
@@ -64,7 +61,8 @@ namespace OOP_Final_Project
             }
             selectedCarat.Text = null;
             priceGram.Text = null;
-            this.Hide();        
+            this.Hide();
+            main.ListDetails();
         }
     }
 }

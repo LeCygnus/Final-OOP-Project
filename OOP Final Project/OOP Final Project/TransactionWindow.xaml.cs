@@ -22,31 +22,31 @@ namespace OOP_Final_Project
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             this.WindowState = WindowState.Maximized;
-            ListDetails();
+          //  ListDetails();
 
         }
 
-        public void ListDetails()
-        {
-            List<CustomerDetails> itemList = new List<CustomerDetails>();
+      //  public void ListDetails()
+        //{
+          //  List<CustomerDetails> itemList = new List<CustomerDetails>();
 
-            int maxIndex = DataStorage.customerList.Count;
+            //int maxIndex = DataStorage.customerList.Count;
 
-            for (int index = 0; index < maxIndex; index++)
-            {
-                itemList.Add(new CustomerDetails()
-                {
-                    ID = index,
-                    Name = DataStorage.customerList[index],
-                    TransactionDate = DataStorage.dateOfTransaction[index],
-                    AmountLoaned = DataStorage.amountLoaned[index],
-                    InterestRate = DataStorage.interestRate[index],
-                    Balance = DataStorage.accountBalance[index]
-                });
-            }
+           // for (int index = 0; index < maxIndex; index++)
+            //{
+             //   itemList.Add(new CustomerDetails()
+          //      {
+                    //ID = index,
+                    //Name = DataStorage.customerList[index],
+                    //TransactionDate = DataStorage.dateOfTransaction[index],
+                    //AmountLoaned = DataStorage.amountLoaned[index],
+                    //InterestRate = DataStorage.interestRate[index],
+                    //Balance = DataStorage.accountBalance[index]
+               // });
+            //}
 
-            listViewMasterList.ItemsSource = itemList;
-        }
+           // listViewMasterList.ItemsSource = itemList;
+      //  }
 
         public void MasterListItems()
         {
@@ -69,8 +69,8 @@ namespace OOP_Final_Project
         {
             //openTransactionWindow.ShowDialog();
             this.Show();
-            if (DataStorage.customerList != null)
-                ListDetails();
+           // if (DataStorage.customerList != null)
+                //ListDetails();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -93,7 +93,7 @@ namespace OOP_Final_Project
 
     }
 
-    public class CustomerDetails
+    public class CustomerDetailsz
     {
         public int ID { get; set; }
         public string Name { get; set; }
