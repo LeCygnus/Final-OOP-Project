@@ -29,6 +29,7 @@ namespace OOP_Final_Project
             {
                 cmbNameList.Items.Add(item);
             }
+            dpDateOfTransaction.DisplayDateEnd = DateTime.Now;
         }            
 
         private void CalculationLogic()
@@ -125,32 +126,29 @@ namespace OOP_Final_Project
 
         private void btnAddTransaction_Click(object sender, RoutedEventArgs e)
         {         
-            int index;
-            index = DataStorage.DataIndex(cmbNameList.Text);
+            int index = DataStorage.DataIndex(cmbNameList.Text);
 
             if (DataStorage.accountBalance[index] == 0)
             {
                 //Data storing
-                DataStorage.typeOfJewelry.Insert(index,cmbTypeOfJewelry.Text);
-                DataStorage.qualityOfJewelry.Insert(index, cmbJewelryQuality.Text);
-                DataStorage.weightOfJewelry.Insert(index, Convert.ToDecimal(txtbWeight.Text));
+                DataStorage.typeOfJewelry[index] = cmbTypeOfJewelry.Text;
+                DataStorage.qualityOfJewelry[index] = cmbJewelryQuality.Text;
+                DataStorage.weightOfJewelry[index] = Convert.ToDecimal(txtbWeight.Text);
 
-                DataStorage.discount.Insert(index, Convert.ToInt32(txtbDiscount.Text));
-                DataStorage.actualValue.Insert(index, Convert.ToDecimal(txtblockActualValue.Text));
-                DataStorage.dateOfTransaction.Insert(index, dpDateOfTransaction.Text);
+                DataStorage.discount[index] = Convert.ToInt32(txtbDiscount.Text);
+                DataStorage.actualValue[index] = Convert.ToDecimal(txtblockActualValue.Text);
+                DataStorage.dateOfTransaction[index] = dpDateOfTransaction.Text;
 
-                DataStorage.amountLoaned.Insert(index, Convert.ToDecimal(txtbAmountLoaned.Text));
-                DataStorage.interestRate.Insert(index, Convert.ToDecimal(txtbInterestRate.Text));
-                DataStorage.accumulatedAmount.Insert(index, Convert.ToDecimal(txtbAmountLoaned.Text));
+                DataStorage.amountLoaned[index] = Convert.ToDecimal(txtbAmountLoaned.Text);
+                DataStorage.interestRate[index] = Convert.ToDecimal(txtbInterestRate.Text);
+                DataStorage.accumulatedAmount[index] = Convert.ToDecimal(txtbAmountLoaned.Text);
 
-                DataStorage.dateOfLastPayment.Insert(index, dpDateOfTransaction.Text);
-                DataStorage.details.Insert(index, rtbDetails.Text);
-                DataStorage.dateUpdated.Insert(index, dpDateOfTransaction.Text);
+                DataStorage.dateOfLastPayment[index] = dpDateOfTransaction.Text;
+                DataStorage.details[index] = rtbDetails.Text;
+                DataStorage.dateUpdated[index] = dpDateOfTransaction.Text;
 
-                DataStorage.accountBalance.Insert(index, Convert.ToDecimal(txtbAmountLoaned.Text));
-
-
-
+                DataStorage.amountLoaned[index] = Convert.ToDecimal(txtbAmountLoaned.Text);
+                DataStorage.accountBalance[index] = Convert.ToDecimal(txtbAmountLoaned.Text);
 
                 //Generating of unique pin
                 Random pin = new Random();
@@ -186,7 +184,9 @@ namespace OOP_Final_Project
                 MessageBox.Show(Convert.ToString(randomPin));
 
                 this.Close();
-                main.ListDetails();
+
+                //index = main
+                main.Show();
 
             }
             else if(DataStorage.accountBalance[index] > 0)
@@ -197,6 +197,26 @@ namespace OOP_Final_Project
             {
                 MessageBox.Show("Error! Some fields have incorrect values or are blank.");
             }
+        }
+
+        private void btnDebug_Click(object sender, RoutedEventArgs e)
+        {
+                DataStorage.customerList.Add("Brenn");
+                DataStorage.dateOfTransaction.Add("3/17/2019");
+                DataStorage.amountLoaned.Add(10000);
+                DataStorage.interestRate.Add(5);
+                DataStorage.accountBalance.Add(10000);
+                DataStorage.dateUpdated.Add("3/18/2019");
+
+                DataStorage.customerList.Add("AhBrenn");
+                DataStorage.dateOfTransaction.Add("3/17/2019");
+                DataStorage.amountLoaned.Add(102000);
+                DataStorage.interestRate.Add(52);
+                DataStorage.accountBalance.Add(100200);
+                DataStorage.dateUpdated.Add("3/18/2019");
+                this.Close();
+                //main = new MainWindow();
+                main.Show();
         }
     }
 }

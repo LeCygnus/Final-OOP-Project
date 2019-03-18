@@ -72,7 +72,7 @@ namespace OOP_Final_Project
         public static decimal AccruedAmount(decimal calcInterest, decimal calcPrincipal, int calcMonth)
         {
             calcInterest = calcInterest / 100;
-            return calcPrincipal + (calcPrincipal * calcInterest * calcMonth);
+            return calcPrincipal * calcInterest * calcMonth;
         }
     }
 }

@@ -49,8 +49,26 @@ namespace OOP_Final_Project
                     DataStorage.customerList.Add(GetName.GetFullName());
                     DataStorage.address.Add(txtAddress.Text);
                     DataStorage.contactNumber.Add(txtContactNumber.Text);
-                    DataStorage.accountBalance.Add(0);
+
+                    DataStorage.typeOfJewelry.Add("");
+                    DataStorage.qualityOfJewelry.Add("");
+                    DataStorage.details.Add("");
+
+                    DataStorage.weightOfJewelry.Add(0);
+                    DataStorage.discount.Add(0);
+                    DataStorage.actualValue.Add(0);
+
                     DataStorage.dateOfLastPayment.Add("");
+                    DataStorage.dateOfTransaction.Add("");
+                    DataStorage.dateOfLastPayment.Add("");
+
+                    DataStorage.dateUpdated.Add("");
+                    DataStorage.accumulatedAmount.Add(0);
+
+                    DataStorage.amountLoaned.Add(0);
+                    DataStorage.interestRate.Add(0);
+                    DataStorage.accountBalance.Add(0);
+
                     this.Close();
                 }
             }
@@ -61,5 +79,13 @@ namespace OOP_Final_Project
             this.Close();
         }
 
+        private void Preset(object sender, RoutedEventArgs e)
+        {
+            txtNameFirst.Text = "Brenn";
+            txtNameMiddle.Text = "Ching";
+            txtNameLast.Text = "Hong";
+            txtContactNumber.Text = "222";
+            txtAddress.Text = "Ateneo";
+        }
     }
 }

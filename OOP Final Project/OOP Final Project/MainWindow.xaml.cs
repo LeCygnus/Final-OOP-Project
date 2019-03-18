@@ -20,16 +20,20 @@ namespace OOP_Final_Project
     public partial class MainWindow : Window
     {
         //declaring variables for instantiating
-        SettingsWindow settings;
+        public SettingsWindow settings;
+        Payment_Window paymentWindow;
+        MainWindow main;
         LoanTransaction addLoanTransaction;
-        List<int> listItemIndex;
+        public List<int> listItemIndex;
+
+        int accountNumber;
+        int counter;
 
         public MainWindow()
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            this.WindowState = WindowState.Maximized;
-            //DebugList();
+            this.WindowState = WindowState.Maximized;           
         }
 
         //Used to add data into the List and update outdated customer balances
@@ -38,35 +42,37 @@ namespace OOP_Final_Project
             listItemIndex = new List<int>();
             List<CustomerDetails> itemList = new List<CustomerDetails>();
             int maxIndex = DataStorage.customerList.Count;
+            listViewMasterList.ItemsSource = null;
 
             //Logic for adding customer into the list and updating outdated accounts
 
-                for (int index = 0; index < maxIndex; index++)
+            for (int index = 0; index < maxIndex; index++)
                 {
-                    if (DataStorage.accountBalance[index] != 0)
-                    {
-                        //Temporary variables
-                        string currentDate = DateTime.Now.ToString("MM/dd/yyyy");
+                if (DataStorage.accountBalance[index] != 0)
+                {
+                    //Temporary variables
+                    //string currentDate = DateTime.Now.ToString("MM/dd/yyyy");
 
-                    int monthsAccrued = AccruedCalculations.MonthsAccrued(DataStorage.dateOfLastPayment[index]);
-                    decimal balance = DataStorage.accountBalance[index];
-                    decimal interestRate = DataStorage.interestRate[index];
-                    decimal accumlatedAmount = DataStorage.accumulatedAmount[index];
+                    //int monthsAccrued = AccruedCalculations.MonthsAccrued(DataStorage.dateOfLastPayment[index]);
+                    //decimal balance = DataStorage.accountBalance[index];
+                    //decimal interestRate = DataStorage.interestRate[index];
+                    //decimal accumlatedAmount = DataStorage.accumulatedAmount[index];
 
-                    decimal AccruedAmount = AccruedCalculations.AccruedAmount(interestRate, balance, monthsAccrued);
+                    //decimal AccruedAmount = AccruedCalculations.AccruedAmount(interestRate, balance, monthsAccrued);
+                    //MessageBox.Show(AccruedAmount.ToString());
 
-                    //Updates customer balances if outdated
-                    if (DataStorage.dateUpdated[index] != currentDate)
-                    {
-                        DataStorage.accountBalance[index] = balance + AccruedAmount;
-                        DataStorage.accumulatedAmount[index] = accumlatedAmount + balance;
-                        DataStorage.dateUpdated.Insert(index, currentDate);
-                    }
+                    ////Updates customer balances if outdated
+                    //if (DataStorage.dateUpdated[index] != currentDate)
+                    //{
+                    //    DataStorage.accountBalance[index] = balance + AccruedAmount;
+                    //    DataStorage.accumulatedAmount[index] = accumlatedAmount + balance;
+                    //    DataStorage.dateUpdated[index] = currentDate;
+                    //}
 
                     //Adds basic customer data to list
                     itemList.Add(new CustomerDetails()
                     {
-                        ID = index + 1,
+                        //ID = DataStorage.eightDigitPin[index],
                         Name = DataStorage.customerList[index],
                         TransactionDate = DataStorage.dateOfTransaction[index],
                         AmountLoaned = DataStorage.amountLoaned[index].ToString("#,##0.00"),
@@ -85,23 +91,23 @@ namespace OOP_Final_Project
         //Loads data to the MasterList during the start of the program.
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            ListDetails();
+            
         }
 
         //Opens LoanWindow
         private void btnOpenLoanTransaction(object sender, RoutedEventArgs e)
         {
+            if (settings != null)
+            {
                 addLoanTransaction = new LoanTransaction();
                 addLoanTransaction.main = this;
                 addLoanTransaction.Show();
-        }
-
-        //Opens PaymentWindow
-        private void btnPay_Click(object sender, RoutedEventArgs e)
-        {
-            //openTransactionWindow.ShowDialog();
-            this.Show();
-           // if (DataStorage.customerList != null)
+                this.Hide();
+            }
+            else
+            {               
+                MessageBox.Show("Please configure the price settings first!", "Invalid Action", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
         }
 
         //Opens Settings Window
@@ -110,14 +116,17 @@ namespace OOP_Final_Project
             //Instantiates Settings Window
             if (settings == null)
             {
+                counter++;
                 settings = new SettingsWindow();
                 settings.main = this;     
                 settings.Show();
+                this.Close();
             }
             //Reopens settings if instantiated
             else
             {
                 settings.Show();
+                this.Close();
             }
         }
 
@@ -129,6 +138,14 @@ namespace OOP_Final_Project
             DataStorage.amountLoaned.Add(10000);
             DataStorage.interestRate.Add(5);
             DataStorage.accountBalance.Add(10000);
+            DataStorage.dateUpdated.Add("3/18/2019");
+
+            DataStorage.customerList.Add("AhBrenn");
+            DataStorage.dateOfTransaction.Add("3/17/2019");
+            DataStorage.amountLoaned.Add(102000);
+            DataStorage.interestRate.Add(52);
+            DataStorage.accountBalance.Add(100200);
+            DataStorage.dateUpdated.Add("3/18/2019");
         }
 
         //Logic to reveal customer details if selected in the List
@@ -156,54 +173,84 @@ namespace OOP_Final_Project
         private void listViewMasterList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             TransactionDetailsVisibility(listItemIndex[listViewMasterList.SelectedIndex]);
+            accountNumber = listItemIndex[listViewMasterList.SelectedIndex];
         }
 
-
-    }
-
-    //Class for storing data
-    public static class DataStorage
-    {
-        //Used to get the index in Loan Transaction
-        public static int DataIndex(string input)
+        private void DebugButton_Click(object sender, RoutedEventArgs e)
         {
-            int counter = 0;
-            foreach (string name in customerList)
-            {
-                if (name == input)
-                {
-
-                    break;
-                }
-                counter++;
-            }
-            return counter;
+            listViewMasterList.ItemsSource = null;
+            ListDetails();
         }
 
-        //String type datas
-        public static decimal[] priceArray = new decimal[3];
-        public static List<string> customerList = new List<string>();      
-        public static List<string> address = new List<string>();
-        public static List<string> contactNumber = new List<string>();
-        public static List<string> typeOfJewelry = new List<string>();
-        public static List<string> qualityOfJewelry = new List<string>();
-        public static List<string> dateOfTransaction = new List<string>();
-        public static List<string> dateOfLastPayment = new List<string>();
-        public static List<string> dateUpdated = new List<string>();
-        public static List<string> details = new List<string>();
+        private void listViewMasterList_Initialized(object sender, EventArgs e)
+        {
 
-        //Int type datas
-        public static List<int> eightDigitPin = new List<int>();       
+        }
 
-        //Decimal type datas
-        public static List<decimal> discount = new List<decimal>();       
-        public static List<decimal> interestRate = new List<decimal>();       
-        public static List<decimal> weightOfJewelry = new List<decimal>();
-        public static List<decimal> actualValue = new List<decimal>();
-        public static List<decimal> amountLoaned = new List<decimal>();
-        public static List<decimal> accountBalance = new List<decimal>();
-        public static List<decimal> accumulatedAmount = new List<decimal>();
+        private void btnOpenPayWindow(object sender, RoutedEventArgs e)
+        {
+            paymentWindow = new Payment_Window();
+            paymentWindow.index = accountNumber;
+            paymentWindow.Show();
+            paymentWindow.main = this;
+            this.Close();
+
+        }
+
+        private void btnExitProgram(object sender, RoutedEventArgs e)
+        {
+            DebugList();
+            listItemIndex = new List<int>();
+            List<CustomerDetails> itemList = new List<CustomerDetails>();
+            int maxIndex = DataStorage.customerList.Count;
+            listViewMasterList.ItemsSource = null;
+
+            //Logic for adding customer into the list and updating outdated accounts
+
+            for (int index = 0; index < maxIndex; index++)
+            {
+                if (DataStorage.accountBalance[index] != 0)
+                {
+                    //Temporary variables
+                    //string currentDate = DateTime.Now.ToString("MM/dd/yyyy");
+
+                    //int monthsAccrued = AccruedCalculations.MonthsAccrued(DataStorage.dateOfLastPayment[index]);
+                    //decimal balance = DataStorage.accountBalance[index];
+                    //decimal interestRate = DataStorage.interestRate[index];
+                    //decimal accumlatedAmount = DataStorage.accumulatedAmount[index];
+
+                    //decimal AccruedAmount = AccruedCalculations.AccruedAmount(interestRate, balance, monthsAccrued);
+                    //MessageBox.Show(AccruedAmount.ToString());
+
+                    ////Updates customer balances if outdated
+                    //if (DataStorage.dateUpdated[index] != currentDate)
+                    //{
+                    //    DataStorage.accountBalance[index] = balance + AccruedAmount;
+                    //    DataStorage.accumulatedAmount[index] = accumlatedAmount + balance;
+                    //    DataStorage.dateUpdated[index] = currentDate;
+                    //}
+
+                    //Adds basic customer data to list
+                    itemList.Add(new CustomerDetails()
+                    {
+                        //ID = DataStorage.eightDigitPin[index],
+                        Name = DataStorage.customerList[index],
+                        TransactionDate = DataStorage.dateOfTransaction[index],
+                        AmountLoaned = DataStorage.amountLoaned[index].ToString("#,##0.00"),
+                        InterestRate = DataStorage.interestRate[index].ToString() + "%",
+                        Balance = DataStorage.accountBalance[index].ToString("#,##0.00")
+                    });
+
+                    listItemIndex.Add(index);
+                }
+
+                //Assigns datasource to the list.
+                listViewMasterList.ItemsSource = itemList;
+            }
+            // Application.Current.Shutdown();
+        }
     }
+
 
     //Used for inserting items into the masterlist
     public class CustomerDetails

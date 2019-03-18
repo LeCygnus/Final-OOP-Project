@@ -18,10 +18,10 @@
                 </Grid.RowDefinitions>
                 <ListView Name="listViewMasterList" FontSize="12" HorizontalAlignment="Right" Height="537" Margin="-108,73,357,0" VerticalAlignment="Top"
                           Width="751" AutomationProperties.Name="listViewMasterList" SelectionChanged="listViewMasterList_SelectionChanged" Grid.Row="1"
-                          RenderTransformOrigin="0.752,0.416">
+                          RenderTransformOrigin="0.752,0.416" Initialized="listViewMasterList_Initialized">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="No #" Width="75" DisplayMemberBinding="{Binding ID}" />
+                            <GridViewColumn Header="No #" Width="105" DisplayMemberBinding="{Binding ID}" />
                             <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}"/>
                             <GridViewColumn Header="Transaction Date" Width="125" DisplayMemberBinding="{Binding TransactionDate}"/>
                             <GridViewColumn Header="Amount Loaned" Width="125" DisplayMemberBinding="{Binding AmountLoaned}"/>
@@ -57,7 +57,7 @@
 
             </Button>
             <TextBlock FontWeight="SemiBold" FontFamily="Verdana" Height="15" HorizontalAlignment="Left" Text="Price Settings" Margin="16,154,0,451" Foreground="White"/>
-            <Grid Name="gridCustomerDetails" Visibility="Hidden" Margin="898,76,10,10">
+            <Grid Name="gridCustomerDetails" Visibility="Visible" Margin="898,76,10,10">
                 <Image Margin="1,6,226,428" Source="default-profile.gif" Stretch="Uniform" Height="100" Width="100"/>
                 <Label Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="109,26,0,0"/>
                 <TextBox Name="txtbName" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Margin="0,23,0,0"/>
@@ -96,13 +96,20 @@
                 <Label Content="Remaining Balance:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,267,0,0" RenderTransformOrigin="0.544,0.577"/>
                 <TextBox Name="txtbRemainingBalance" IsReadOnly="True" Foreground="Red" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="0,265,48,0"/>
                 <Label FontWeight="Bold" Content="Transaction Details:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,324,0,0"/>
-                <Button Name="btnPay" Content="Pay" Background="#5343D2" FontWeight="Bold"  HorizontalAlignment="Left" Margin="146,300,0,0" VerticalAlignment="Top" Width="93" Height="28"/>
+                <Button Name="btnPay" Content="Pay" Background="#5343D2" FontWeight="Bold"  HorizontalAlignment="Left" Margin="146,300,0,0" VerticalAlignment="Top" Width="93" Height="28" Click="btnOpenPayWindow"/>
                 <materialDesign:PackIcon Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Kind="Payment" Height="21" Width="25" Margin="151,304,0,209" />
                 <TextBox Name="txtbWeight" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Margin="0,369,174,0"/>
                 <TextBox Name="txtbDiscount" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Margin="0,397,174,0"/>
                 <TextBox Name="txtbQualityOfJewelry" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" Margin="0,343,20,0"/>
                 <TextBox Name="txtbActualValue" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Margin="0,367,0,0"/>
+                <Label Content="Price:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="168,397,0,0" RenderTransformOrigin="0.544,0.577"/>
+                <TextBox x:Name="txtbActualValue_Copy" IsReadOnly="True" HorizontalAlignment="Right" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Margin="0,393,0,0"/>
             </Grid>
+            <Button x:Name="btnExitApp" Background="#5343D2" FontWeight="Bold"  HorizontalAlignment="Left" Margin="8,325,0,0" VerticalAlignment="Top" Width="110" Height="66" Click="btnExitProgram">
+                <materialDesign:PackIcon HorizontalAlignment="Center" Kind="Logout" Height="50" Width="30" />
+
+            </Button>
+            <TextBlock FontWeight="SemiBold" FontSize="11" FontFamily="Verdana" HorizontalAlignment="Left"  Height="15" Text="Logout" Margin="40,368,0,229" Foreground="White"/>
         </Grid>
     </Viewbox>
 </Window>

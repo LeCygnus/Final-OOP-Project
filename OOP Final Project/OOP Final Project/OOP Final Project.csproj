@@ -76,11 +76,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LoanTransaction.xaml.cs">
-      <DependentUpon>LoanTransaction.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="LoanTransaction.xaml.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Payment Window.xaml.cs">
+      <DependentUpon>Payment Window.xaml</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="SettingsWindow.xaml.cs">
@@ -122,10 +123,14 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="LoanTransaction.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Payment Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

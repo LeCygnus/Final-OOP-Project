@@ -61,8 +61,57 @@ namespace OOP_Final_Project
             }
             selectedCarat.Text = null;
             priceGram.Text = null;
-            this.Hide();
-            main.ListDetails();
         }
+
+        private void btnCancel(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            //main = new MainWindow();
+            main.settings = this;
+            main.Show();
+        }
+    }
+    //Class for storing data
+    public static class DataStorage
+    {
+        //Used to get the index in Loan Transaction
+        public static int DataIndex(string input)
+        {
+            int counter = 0;
+            foreach (string name in customerList)
+            {
+                if (name == input)
+                {
+
+                    break;
+                }
+                counter++;
+            }
+            return counter;
+        }
+
+        //String type datas
+        public static decimal[] priceArray = new decimal[3];
+        public static List<string> customerList = new List<string>();
+        public static List<string> address = new List<string>();
+        public static List<string> contactNumber = new List<string>();
+        public static List<string> typeOfJewelry = new List<string>();
+        public static List<string> qualityOfJewelry = new List<string>();
+        public static List<string> dateOfTransaction = new List<string>();
+        public static List<string> dateOfLastPayment = new List<string>();
+        public static List<string> dateUpdated = new List<string>();
+        public static List<string> details = new List<string>();
+
+        //Int type datas
+        public static List<int> eightDigitPin = new List<int>();
+
+        //Decimal type datas
+        public static List<decimal> discount = new List<decimal>();
+        public static List<decimal> interestRate = new List<decimal>();
+        public static List<decimal> weightOfJewelry = new List<decimal>();
+        public static List<decimal> actualValue = new List<decimal>();
+        public static List<decimal> amountLoaned = new List<decimal>();
+        public static List<decimal> accountBalance = new List<decimal>();
+        public static List<decimal> accumulatedAmount = new List<decimal>();
     }
 }
