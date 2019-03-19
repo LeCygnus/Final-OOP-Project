@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using OOP_Project.Person;
+using System.Text.RegularExpressions;
 
 namespace OOP_Final_Project
 {
@@ -63,12 +64,14 @@ namespace OOP_Final_Project
                     DataStorage.dateOfLastPayment.Add("");
 
                     DataStorage.dateUpdated.Add("");
-                    DataStorage.accumulatedAmount.Add(0);
+                    DataStorage.eightDigitPin.Add(0);
+                    DataStorage.karatPrice.Add(0);
 
+                    DataStorage.accumulatedAmount.Add(0);
                     DataStorage.amountLoaned.Add(0);
                     DataStorage.interestRate.Add(0);
-                    DataStorage.accountBalance.Add(0);
 
+                    DataStorage.accountBalance.Add(0);
                     this.Close();
                 }
             }
@@ -86,6 +89,13 @@ namespace OOP_Final_Project
             txtNameLast.Text = "Hong";
             txtContactNumber.Text = "222";
             txtAddress.Text = "Ateneo";
+        }
+
+        private void txtContactNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+             Regex regex = new Regex("[^0-9]+");
+             e.Handled = regex.IsMatch(e.Text);
+
         }
     }
 }

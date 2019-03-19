@@ -22,15 +22,15 @@ namespace OOP_Final_Project
 
             int monthsAccrued = 0;
 
-            // 1/5/16
-            if (currentYear > transactionYear) //2018 > 2016
+            
+            if (currentYear > transactionYear)
             {
-                monthsAccrued = (currentYear - transactionYear) * 12; // 2018 - 2016 = 2 * 12 = 24
+                monthsAccrued = (currentYear - transactionYear) * 12;
             }
 
-            if (currentMonth > transactionMonth) // 3 > 5
+            if (currentMonth > transactionMonth)
             {
-                //monthsAccrued = (monthsAccrued + currentMonth) - userMonth;
+                
                 if (currentDay >= transactionDay)
                 {
                     monthsAccrued = monthsAccrued + (currentMonth - transactionMonth);
@@ -51,7 +51,7 @@ namespace OOP_Final_Project
                         monthsAccrued = 0;
                 }
             }
-            else// (currentMonth < userMonth)
+            else
             {
                 if (currentDay >= transactionDay)
                 {

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace OOP_Final_Project
 {
@@ -19,31 +20,42 @@ namespace OOP_Final_Project
     /// </summary>
     public partial class Payment_Window : Window
     {
+        //Declarations
         public MainWindow main;
         public int index;
+        decimal remainingBalance;
+
         public Payment_Window()
         {
             InitializeComponent();
-            txtremainingBalance.Text = DataStorage.accountBalance[index].ToString();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            remainingBalance = DataStorage.accountBalance[index];
+            txtremainingBalance.Text = "Php " + remainingBalance.ToString("#,##0.00");
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void Enter(object sender, RoutedEventArgs e)
         {
-            //main = new MainWindow();
-            DataStorage.accountBalance[index] = DataStorage.accountBalance[index] - Convert.ToDecimal(txtbPayment.Text);
-            this.Close();
-            main.Show();
+            if (Convert.ToDecimal(txtbPayment.Text) >= 0)
+            {
+                DataStorage.accountBalance[index] = DataStorage.accountBalance[index] - Convert.ToDecimal(txtbPayment.Text);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Input. Input Must be higher than 0", "Invalid Action", MessageBoxButton.OK, MessageBoxImage.Hand);
+            }
         }
 
         private void Cancel(object sender, RoutedEventArgs e)
         {
             this.Close();
-            main.Show();
+        }
+
+        private void txtbPayment_TextInputDisabler(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

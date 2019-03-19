@@ -5,10 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOP_Final_Project"
         mc:Ignorable="d"
-        Loaded="Window_Loaded"
         Title="Payment_Window" Height="150" Width="250">
     <Grid Background="NavajoWhite">
-        <TextBox Name="txtbPayment" HorizontalAlignment="Left" Height="30" Margin="74,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtbPayment" HorizontalAlignment="Left" Height="30" Margin="74,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="txtbPayment_TextInputDisabler"/>
         <Label Content="Payment:" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top"/>
         <Label Content="Balance:" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top"/>
         <TextBlock Name="txtremainingBalance" HorizontalAlignment="Left" Margin="74,11,0,0" TextWrapping="Wrap" Text="0.00" VerticalAlignment="Top"/>
